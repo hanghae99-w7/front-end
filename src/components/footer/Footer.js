@@ -3,7 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 
 const Footer = () => {
   const isSmallScreen = useMediaQuery({
-    query: '(max-width: 1024px)',
+    query: '(max-width: 1023px)',
   });
   return <FooterBox>{isSmallScreen ? '작은거' : '큰거'}</FooterBox>;
 };

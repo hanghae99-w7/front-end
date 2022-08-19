@@ -3,7 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 
 const Header = () => {
   const isSmallScreen = useMediaQuery({
-    query: '(max-width: 1024px)',
+    query: '(max-width: 1023px)',
   });
   return <HeaderBox>{isSmallScreen ? '작은거' : '큰거'}</HeaderBox>;
 };
