@@ -1,3 +1,5 @@
+import { useRef, useState } from 'react';
+
 import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-router-dom';
 
@@ -21,11 +23,47 @@ import {
 } from './Footer.styled';
 
 const Footer = () => {
+  const [service, setService] = useState(true);
+  const [law, setLaw] = useState(true);
+  const [social, setSocial] = useState(true);
+
   const isSmallScreen = useMediaQuery({
     query: '(max-width: 770px)',
   });
 
-  // {isSmallScreen ? '작은거' : '큰거';}
+  const serviceRef = useRef();
+  const lawRef = useRef();
+  const socialRef = useRef();
+
+  const hideService = () => {
+    if (service) {
+      serviceRef.current.style.display = 'none';
+      setService(false);
+    } else {
+      serviceRef.current.style.display = 'block';
+      setService(true);
+    }
+  };
+
+  const hideLaw = () => {
+    if (law) {
+      lawRef.current.style.display = 'none';
+      setLaw(false);
+    } else {
+      lawRef.current.style.display = 'block';
+      setLaw(true);
+    }
+  };
+
+  const hideSocial = () => {
+    if (social) {
+      socialRef.current.style.display = 'none';
+      setSocial(false);
+    } else {
+      socialRef.current.style.display = 'block';
+      setSocial(true);
+    }
+  };
 
   return (
     <div>
@@ -36,10 +74,10 @@ const Footer = () => {
               <SmallFooterTitle>
                 <button>
                   <Link to="/">고객서비스</Link>
-                  <span>+</span>
+                  <span onClick={hideService}>{service ? '-' : '+'}</span>
                 </button>
               </SmallFooterTitle>
-              <SmallFooterGroup>
+              <SmallFooterGroup ref={serviceRef}>
                 <SmallFooterItems>
                   <SmallFooterItem>
                     <div className="footer_item_link">
@@ -94,10 +132,10 @@ const Footer = () => {
               <SmallFooterTitle>
                 <button>
                   <Link to="/">법적 고지</Link>
-                  <span>+</span>
+                  <span onClick={hideLaw}>{law ? '-' : '+'}</span>
                 </button>
               </SmallFooterTitle>
-              <SmallFooterGroup>
+              <SmallFooterGroup ref={lawRef}>
                 <SmallFooterItems>
                   <SmallFooterItem>
                     <div className="footer_item_link">
@@ -122,10 +160,10 @@ const Footer = () => {
               <SmallFooterTitle>
                 <button>
                   <Link to="/">소셜 미디어</Link>
-                  <span>+</span>
+                  <span onClick={hideSocial}>{social ? '-' : '+'}</span>
                 </button>
               </SmallFooterTitle>
-              <SmallFooterGroup>
+              <SmallFooterGroup ref={socialRef}>
                 <SmallFooterItems>
                   <SmallFooterItem>
                     <div className="footer_item_link">
