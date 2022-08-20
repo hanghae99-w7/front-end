@@ -13,12 +13,12 @@ export const LandingImgBox = styled.div`
 export const LandingBox = styled.div`
   width: 100%;
   height: auto;
-  background-color: green;
 `;
 
 export const LandingVideo = styled.video`
   width: 100%;
   height: auto;
+  display: block;
   background-size: auto;
 `;
 
