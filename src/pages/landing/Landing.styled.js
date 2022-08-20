@@ -2,24 +2,24 @@ import styled from "styled-components";
 
 export const LandingImgBox = styled.div`
   width: 100%;
-  height: 95%;
+  height: 100%;
   text-align: center;
   font-family: 'AppleSDGothicNeoEB';
   color: #FFFFFF;
   position: relative;
-  background-color: white;
 `;
 
 export const LandingBox = styled.div`
   width: 100%;
   height: auto;
-  background-color: green;
+  overflow: hidden;
 `;
 
 export const LandingVideo = styled.video`
   width: 100%;
   height: auto;
   background-size: auto;
+  display: block;
 `;
 
 export const LandingImg = styled.img`
@@ -82,7 +82,7 @@ export const LandingH1BtnBoxChange = styled.div`
   text-align: center;
   width: 100%;
   height: 100px;
-  top: 80%;
+  top: 65%;
   bottom: 0%;
 `
 
