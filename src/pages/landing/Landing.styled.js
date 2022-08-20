@@ -53,7 +53,7 @@ export const LandingVideo1Box = styled.video`
 `;
 
 export const LandingH1 = styled.h1`
-  font-size: 27px;
+  font-size: 23px;
   text-decoration: none solid rgb(255, 255, 255);
   word-spacing: 0px;
   margin-bottom: 10px;
@@ -73,7 +73,25 @@ export const LandingH1BtnBox = styled.div`
   text-align: center;
   width: 100%;
   height: 100px;
-  top: 75%;
+  top: 80%;
+  bottom: 0%;
+`;
+
+export const LandingH1BtnBox2 = styled.div`
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  top: 77%;
+  bottom: 0%;
+`;
+
+export const LandingH1BtnBox3 = styled.div`
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  top: 80%;
   bottom: 0%;
 `;
 
@@ -83,6 +101,16 @@ export const LandingH1BtnBoxChange = styled.div`
   text-align: center;
   width: 100%;
   height: 100px;
-  top: 65%;
+  top: 74%;
   bottom: 0%;
-`;
+`
+
+export const LandingH1BtnBoxChangeTwo = styled.div`
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  top: 69%;
+  bottom: 0%;
+`
+
