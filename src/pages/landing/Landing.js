@@ -17,6 +17,8 @@ import {
   LandingH1BtnBoxChange,
 } from './Landing.styled';
 import { useMediaQuery } from 'react-responsive';
+import Footer from '../../components/footer/Footer';
+
 
 const Landing = () => {
   const isSmallScreen = useMediaQuery({
@@ -30,6 +32,7 @@ const Landing = () => {
   return (
     <LandingBox>
       <Header />
+
       {/*반응형 웹 이미지 파트 */}
       <LandingImgBox>
         {!isSmallScreenH1Div ? (
@@ -148,6 +151,9 @@ const Landing = () => {
           </LandingImg1Box>
         )}
       </LandingImgBox>
+      {/* <LandingVideo src={landing_1} autoPlay loop muted /> */}
+      <Footer />
+
     </LandingBox>
   );
 };
