@@ -32,7 +32,7 @@ import {
   HeaderBoxSmallRight,
   HeaderBoxSmallBasket,
   HeaderBoxSmallMenu,
-  AsieBar,
+  AsideBar,
   AsideBarCancel,
   AsieBarInner,
   AsideBarContentFirst,
@@ -109,7 +109,7 @@ const Header = () => {
               </HeaderBoxSmallInner>
             </HeaderBoxSmallContainer>
           </HeaderBoxSmall>
-          <AsieBar ref={asideBarRef}>
+          <AsideBar ref={asideBarRef}>
             <AsideBarCancel onClick={hideAsideBar}>
               <BsXLg></BsXLg>
             </AsideBarCancel>
@@ -145,7 +145,7 @@ const Header = () => {
                 </AsideBarFooterUl>
               </AsideBarFooter>
             </AsieBarInner>
-          </AsieBar>
+          </AsideBar>
           <AsideBackground ref={asideBackRef} />
         </Fragment>
       ) : (
@@ -205,7 +205,7 @@ const Header = () => {
         </HeaderBasketCancel>
         <HeaderBasketInner>
           <HeaderBasketTitle>쇼핑백</HeaderBasketTitle>
-          <HeaderBasketForm height={isSmallScreen ? '286px' : '362px'}>
+          <HeaderBasketForm>
             <HeaderBasketCartGroup>
               쇼핑백에 담긴 제품이 없습니다.
             </HeaderBasketCartGroup>
@@ -279,8 +279,8 @@ export const HeaderBasketTitle = styled.p`
   font-weight: 700;
 `;
 export const HeaderBasketForm = styled.form`
-  height: calc(100vh - ${(props) => props.height});
-  min-height: calc(100vh - 362px);
+  height: calc(100vh - 286px);
+  min-height: calc(100vh - 286px);
   margin-bottom: 36px;
   font-size: 13px;
 `;
