@@ -18,10 +18,12 @@ import {
   LandingH1BtnBox,
   LandingImgBig1,
   LandingImg1Box,
-  LandingImg2Box,
+  LandingH1BtnBox2,
+  LandingH1BtnBox3,
   LandingVideo1Box,
   BtnGruob1,
   LandingH1BtnBoxChange,
+  LandingH1BtnBoxChangeTwo,
 } from './Landing.styled';
 import { useMediaQuery } from 'react-responsive';
 import Footer from '../../components/footer/Footer';
@@ -48,11 +50,23 @@ const Landing = () => {
             <LandingH1>SELFIE SELECTION: SEE ME</LandingH1>
             <BtnGruob1>
               <Button
-                style={{ ft_size: '13px', bd_color: 'white', mg_right: '5px' }}
+                style={{
+                  ft_size: '12px',
+                  bd_color: 'white',
+                  mg_right: '5px',
+                  width: '150px',
+                  height: '40px',
+                }}
                 text={'자세히보기'}
               />
               <Button
-                style={{ ft_size: '13px', bd_color: 'white', mg_left: '5px' }}
+                style={{
+                  ft_size: '12px',
+                  bd_color: 'white',
+                  mg_left: '5px',
+                  width: '150px',
+                  height: '40px',
+                }}
                 text={'구매하기'}
               />
             </BtnGruob1>
@@ -62,11 +76,23 @@ const Landing = () => {
             <LandingH1>SELFIE SELECTION: SEE ME</LandingH1>
             <BtnGruob1>
               <Button
-                style={{ ft_size: '13px', bd_color: 'white', mg_right: '5px' }}
+                style={{
+                  ft_size: '12px',
+                  bd_color: 'white',
+                  mg_right: '5px',
+                  width: '150px',
+                  height: '40px',
+                }}
                 text={'자세히보기'}
               />
               <Button
-                style={{ ft_size: '13px', bd_color: 'white', mg_left: '5px' }}
+                style={{
+                  ft_size: '12px',
+                  bd_color: 'white',
+                  mg_left: '5px',
+                  width: '150px',
+                  height: '40px',
+                }}
                 text={'구매하기'}
               />
             </BtnGruob1>
@@ -85,31 +111,43 @@ const Landing = () => {
       {/*반응형 쏘니 영상 파트 */}
       <LandingImgBox>
         {!isSmallScreenH1Div ? (
-          <LandingH1BtnBox>
+          <LandingH1BtnBox2>
             <LandingH1>GENTLE MONSTER ✕ SON7</LandingH1>
             <p class="text-area__sub-title font--en">
               Nice One Sonny, Nice One Son
             </p>
             <BtnGruob1>
               <Button
-                style={{ ft_size: '13px', bd_color: 'white', mg_right: '5px' }}
+                style={{
+                  ft_size: '12px',
+                  bd_color: 'white',
+                  mg_right: '5px',
+                  width: '150px',
+                  height: '40px',
+                }}
                 text={'자세히보기'}
               />
             </BtnGruob1>
-          </LandingH1BtnBox>
+          </LandingH1BtnBox2>
         ) : (
-          <LandingH1BtnBoxChange>
+          <LandingH1BtnBoxChangeTwo>
             <LandingH1>GENTLE MONSTER ✕ SON7</LandingH1>
             <p class="text-area__sub-title font--en">
               Nice One Sonny, Nice One Son
             </p>
             <BtnGruob1>
               <Button
-                style={{ ft_size: '13px', bd_color: 'white', mg_right: '5px' }}
+                style={{
+                  ft_size: '12px',
+                  bd_color: 'white',
+                  mg_right: '5px',
+                  width: '150px',
+                  height: '40px',
+                }}
                 text={'자세히보기'}
               />
             </BtnGruob1>
-          </LandingH1BtnBoxChange>
+          </LandingH1BtnBoxChangeTwo>
         )}
         {!isSmallScreen ? (
           <LandingVideo src={landing_media1} autoPlay loop muted />
@@ -122,29 +160,53 @@ const Landing = () => {
 
       <LandingImgBox>
         {!isSmallScreenH1Div ? (
-          <LandingH1BtnBox>
+          <LandingH1BtnBox3>
             <LandingH1>MONCLER + GENTLE MONSTER</LandingH1>
             <BtnGruob1>
               <Button
-                style={{ ft_size: '13px', bd_color: 'white', mg_right: '5px' }}
+                style={{
+                  ft_size: '12px',
+                  bd_color: 'white',
+                  mg_right: '5px',
+                  width: '150px',
+                  height: '40px',
+                }}
                 text={'자세히보기'}
               />
               <Button
-                style={{ ft_size: '13px', bd_color: 'white', mg_left: '5px' }}
+                style={{
+                  ft_size: '12px',
+                  bd_color: 'white',
+                  mg_left: '5px',
+                  width: '150px',
+                  height: '40px',
+                }}
                 text={'구매하기'}
               />
             </BtnGruob1>
-          </LandingH1BtnBox>
+          </LandingH1BtnBox3>
         ) : (
           <LandingH1BtnBoxChange>
             <LandingH1>MONCLER + GENTLE MONSTER</LandingH1>
             <BtnGruob1>
               <Button
-                style={{ ft_size: '13px', bd_color: 'white', mg_right: '5px' }}
+                style={{
+                  ft_size: '12px',
+                  bd_color: 'white',
+                  mg_right: '5px',
+                  width: '150px',
+                  height: '40px',
+                }}
                 text={'자세히보기'}
               />
               <Button
-                style={{ ft_size: '13px', bd_color: 'white', mg_left: '5px' }}
+                style={{
+                  ft_size: '12px',
+                  bd_color: 'white',
+                  mg_left: '5px',
+                  width: '150px',
+                  height: '40px',
+                }}
                 text={'구매하기'}
               />
             </BtnGruob1>
