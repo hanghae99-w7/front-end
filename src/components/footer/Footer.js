@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-router-dom';
 

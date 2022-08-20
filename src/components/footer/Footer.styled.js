@@ -165,10 +165,22 @@ export const LargeFooterItem = styled.div`
 `;
 
 export const LargeCopyright = styled.div`
-color: #343434;
+	padding: 75px 0 0 0;
+	color: #343434;
 
-.content {
-  font-size:11px;
-}
+	.copyright {
+		font-size: 11px;
+		word-break: keep-all;
+		display: block;
+	}
 
+	.font_title {
+		min-width: 250px;
+		max-width: 250px;
+		font-size: 15px;
+		font-weight: normal;
+	}
+
+	.content {
+	}
 `;
