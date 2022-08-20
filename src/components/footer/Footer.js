@@ -316,7 +316,6 @@ const Footer = () => {
 					<LargeCopyright>© 2022 GENTLE MONSTER</LargeCopyright>
 				</LargeFooterBox>
 			)}
-      dd
 		</div>
 	);
 };
