@@ -55,6 +55,9 @@ export const SmallFooterTitle = styled.div`
 		color: #343434;
 		letter-spacing: -0.3px;
 		display: inline-block;
+		&:hover{
+			cursor: pointer;
+		}
 	}
 
 	a:link {

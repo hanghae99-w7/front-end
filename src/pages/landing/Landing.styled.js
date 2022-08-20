@@ -1,12 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const LandingImgBox = styled.div`
   width: 100%;
   height: 100%;
   text-align: center;
-  font-family: 'AppleSDGothicNeoH';
-  word-spacing: -1px;
-  color: #FFFFFF;
+  font-family: 'AppleSDGothicNeoEB';
+  color: #ffffff;
   position: relative;
 `;
 
@@ -35,7 +34,7 @@ export const LandingImgBig1 = styled.img`
   height: 100vw;
   object-fit: cover;
   display: block;
-`
+`;
 export const LandingImg1Box = styled.div`
   width: 100vw;
   height: 100vw;
@@ -51,7 +50,7 @@ export const LandingVideo1Box = styled.video`
   height: auto;
   object-fit: cover;
   display: block;
-`
+`;
 
 export const LandingH1 = styled.h1`
   font-size: 23px;
@@ -60,16 +59,16 @@ export const LandingH1 = styled.h1`
   margin-bottom: 10px;
 `;
 
-
 export const BtnGruob1 = styled.div`
   padding-top: 14px;
   padding-bottom: 64px;
   display: block;
   height: 65px;
   margin-top: 10px;
-`
+`;
 
 export const LandingH1BtnBox = styled.div`
+  z-index: 999;
   position: absolute;
   text-align: center;
   width: 100%;
@@ -97,6 +96,7 @@ export const LandingH1BtnBox3 = styled.div`
 `;
 
 export const LandingH1BtnBoxChange = styled.div`
+  z-index: 999;
   position: absolute;
   text-align: center;
   width: 100%;

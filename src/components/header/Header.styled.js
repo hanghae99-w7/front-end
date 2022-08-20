@@ -239,3 +239,88 @@ export const AsideBackground = styled.div`
   opacity: 0;
   transition: opacity 0.6s ease, visibility 0.6s ease;
 `;
+
+
+// Basket
+export const HeaderBasket = styled.div`
+  position: fixed;
+  z-index: 99999;
+  max-width: 327px;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  transform: translateX(100%);
+  transition: transform 0.6s ease;
+`;
+export const HeaderBasketCancel = styled.div`
+  position: fixed;
+  top: 22px;
+  right: 22px;
+  font-size: 14px;
+  box-sizing: border-box;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+export const HeaderBasketInner = styled.div`
+  box-sizing: border-box;
+  padding: 22px 16px;
+`;
+export const HeaderBasketTitle = styled.p`
+  font-size: 14px;
+  margin-bottom: 36px;
+  font-weight: 700;
+`;
+export const HeaderBasketForm = styled.form`
+  height: calc(100vh - 286px);
+  min-height: calc(100vh - 286px);
+  margin-bottom: 36px;
+  font-size: 13px;
+`;
+export const HeaderBasketCartGroup = styled.div`
+  box-sizing: border-box;
+  display: flex;
+`;
+export const HeaderBasketTotalGroup = styled.div`
+  box-sizing: border-box;
+  width: 100%;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 14px;
+  padding-bottom: 8px;
+  background-color: #fff;
+  left: 16px;
+  right: 16px;
+`;
+export const HeaderBasketTotalShipping = styled.div`
+  box-sizing: border-box;
+  word-break: keep-all;
+  background-color: transparent;
+`;
+export const HeaderBasketTotalTotal = styled.div`
+  box-sizing: border-box;
+  word-break: keep-all;
+  background-color: transparent;
+`;
+export const HeaderBasketTotalObj = styled.div`
+  box-sizing: border-box;
+  padding: 4px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+export const HeaderBasketTotalSpan = styled.span`
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.92;
+  word-break: keep-all;
+`;
+
+export const HeaderBasketButtonGroup = styled.div`
+  box-sizing: border-box;
+  margin-top: 28px;
+  left: 16px;
+  right: 16px;
+`;

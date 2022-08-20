@@ -220,7 +220,6 @@ const Landing = () => {
           </LandingImg1Box>
         )}
       </LandingImgBox>
-      {/* <LandingVideo src={landing_1} autoPlay loop muted /> */}
       <Footer />
     </LandingBox>
   );
