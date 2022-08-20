@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 import '../../static/font/font.css';
 import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
 
 const Landing = () => {
   return (
     <LandingBox>
       <Header />
       {/* <LandingVideo src={landing_1} autoPlay loop muted /> */}
+      <Footer />
     </LandingBox>
   );
 };
