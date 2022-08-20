@@ -314,10 +314,14 @@ const Footer = () => {
 							</LargeFooterGroup>
 						</LargeFooterSection>
 					</LargeFooterNav>
-					<LargeCopyright>© 2022 GENTLE MONSTER</LargeCopyright>
+					<LargeCopyright>
+						<p class="copyright">© 2022 GENTLE MONSTER</p>
+        <div>
+          
+        </div>
+          </LargeCopyright>
 				</LargeFooterBox>
 			)}
-			;
 		</div>
 	);
 };
