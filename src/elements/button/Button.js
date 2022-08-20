@@ -17,6 +17,7 @@ const Button = ({ type, text, style, _onClick }) => {
       mg_right={style?.mg_right}
       bd_radius={style?.bd_radius}
       bd_color={style?.bd_color}
+      position={style?.position}
     >
       {text}
     </StyledButton>

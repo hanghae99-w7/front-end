@@ -315,11 +315,19 @@ const Footer = () => {
 						</LargeFooterSection>
 					</LargeFooterNav>
 					<LargeCopyright>
-						<p class="copyright">© 2022 GENTLE MONSTER</p>
-        <div>
-          
-        </div>
-          </LargeCopyright>
+						<div className="copyright">
+							<p className="font_title">© 2022 GENTLE MONSTER</p>
+							<p className="content">
+								주) 아이아이컴바인드 | 대표자명: 김한국 | 사업자번호:
+								119-86-38589 | 통신판매신고번호: 제 2014-서울마포-1050 호
+								(사업자 정보 확인) | 이메일 문의: cs@gentlemonster.com |
+								개인정보보호책임자: 정태호 | 주소: 서울특별시 마포구
+								어울마당로5길 41 | 대표번호: 1600-2126 고객님의 안전한 현금자산
+								거래를 위하여 하나은행과 채무지급보증계약을 체결하여
+								보장해드리고 있습니다. 서비스 가입사실 확인
+							</p>
+						</div>
+					</LargeCopyright>
 				</LargeFooterBox>
 			)}
 		</div>

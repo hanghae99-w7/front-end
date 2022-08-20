@@ -164,4 +164,11 @@ export const LargeFooterItem = styled.div`
 	}
 `;
 
-export const LargeCopyright = styled.div``;
+export const LargeCopyright = styled.div`
+color: #343434;
+
+.content {
+  font-size:11px;
+}
+
+`;
