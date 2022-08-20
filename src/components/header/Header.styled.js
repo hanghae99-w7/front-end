@@ -164,7 +164,7 @@ export const HeaderBoxSmallMenu = styled.div`
 `;
 
 // Aside bar
-export const AsieBar = styled.div`
+export const AsideBar = styled.div`
   position: fixed;
   z-index: 99999;
   max-width: 385px;

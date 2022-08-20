@@ -18,6 +18,7 @@ export const LandingBox = styled.div`
 export const LandingVideo = styled.video`
   width: 100%;
   height: auto;
+  display: block;
   background-size: auto;
   display: block;
 `;
