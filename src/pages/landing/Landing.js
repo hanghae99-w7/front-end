@@ -113,7 +113,7 @@ const Landing = () => {
         {!isSmallScreenH1Div ? (
           <LandingH1BtnBox2>
             <LandingH1>GENTLE MONSTER ✕ SON7</LandingH1>
-            <p class="text-area__sub-title font--en">
+            <p className="text-area__sub-title font--en">
               Nice One Sonny, Nice One Son
             </p>
             <BtnGruob1>
@@ -132,7 +132,7 @@ const Landing = () => {
         ) : (
           <LandingH1BtnBoxChangeTwo>
             <LandingH1>GENTLE MONSTER ✕ SON7</LandingH1>
-            <p class="text-area__sub-title font--en">
+            <p className="text-area__sub-title font--en">
               Nice One Sonny, Nice One Son
             </p>
             <BtnGruob1>

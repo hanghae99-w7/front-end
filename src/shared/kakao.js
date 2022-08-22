@@ -1,6 +1,6 @@
 import { useEffect, Fragment } from 'react';
 
-import { kakaoAuthThunk } from '../redux/modules/member';
+import { kakaoAuthThunk } from '../redux/modules/user';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 

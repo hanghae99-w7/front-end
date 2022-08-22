@@ -1,11 +1,13 @@
 import { StyledInput } from './Input.styled';
 
-const Input = ({ type, value, _onChange, _ref, style }) => {
+const Input = ({ type, value, _onChange, _minLength, _maxLength, _ref, style }) => {
   return (
     <StyledInput
       type={type}
       value={value}
       onChange={_onChange}
+      minLength={_minLength}
+      maxLength={_maxLength}
       ref={_ref}
       width={style?.width}
       height={style?.height}
@@ -22,6 +24,7 @@ const Input = ({ type, value, _onChange, _ref, style }) => {
       mg_right={style?.mg_right}
       bd_radius={style?.bd_radius}
       bd_color={style?.bd_color}
+      required
     />
   );
 };
