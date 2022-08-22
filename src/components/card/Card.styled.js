@@ -1,56 +1,25 @@
 import styled from 'styled-components';
 
-//한 행에 카드 6개씩 나오는 width
 export const CardBox = styled.div`
-  width: 362.188px;
-  height: 568.75px;
-  position: relative;
-  font-family: 'AppleSDGothicNeoL';
-`;
-
-//한 행에 카드 6개씩 나오는 width
-export const CardBox2 = styled.div`
-  width: 300px;
-  height: 500.75px;
+  width:450px;
+  height: 650px;
   position: relative;
   font-family: 'AppleSDGothicNeoL';
 `;
 
 export const CardImg = styled.img`
-  width: 362.188px;
-  height: 490.75px;
-`;
-
-export const CardImg2 = styled.img`
-  width: 300px;
-  height: 422.75px;
+  width: 450px;
+  height: 570px;
 `;
 
 export const CardTextBox = styled.div`
-  width: 362.188px;
+  width: 449px;
   height: 64px;
   position: absolute;
   bottom: 0%;
   svg {
     height:1.3em;
-    width:1.3em;
-    position: absolute;
-    top:0%;
-    right: 1.5%;
-    &:hover {
-    cursor: pointer;
-  }
-  }
-`;
-
-export const CardTextBox2 = styled.div`
-  width: 299.9px;
-  height: 64px;
-  position: absolute;
-  bottom: 0%;
-  svg {
-    height:1.3em;
-    width:1.3em;
+    width:1.4em;
     position: absolute;
     top:0%;
     right: 1.5%;
@@ -67,6 +36,7 @@ font-size: 14px;
 font-weight: 600;
 text-align: left;
 margin-top: 3px;
+margin-left: 3px;
 &:hover {
     cursor: pointer;
   }
@@ -76,6 +46,7 @@ export const CardItemPrice = styled.p`
 width: 61.5px;
 height: 29px;
 font-size: 13px;
+margin-left: 3px;
 &:hover {
     cursor: pointer;
   }
