@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 // Pages
 import Landing from './pages/landing/Landing';
+
 import SignIn from './pages/signin/SignIn';
 import SignUp from './pages/signup/SignUp';
 import Sunglass from './pages/sunglass/Sunglass';
@@ -13,17 +14,17 @@ import Service from './pages/service/Service';
 import Kakao from './shared/kakao';
 
 function App() {
-  return (
-    <Routes>
-      <Route path={'/'} exact={true} element={<Landing />} />
-      <Route path={'/signin'} element={<SignIn />} />
-      <Route path={'/signup'} element={<SignUp />} />
-      <Route path={'/sungalss'} element={<Sunglass />} />
-      <Route path={'/glass'} element={<Glass />} />
-      <Route path={'/service'} element={<Service />} />
-      <Route path={'/kakao/callback'} element={<Kakao />} />
-    </Routes>
-  );
+	return (
+		<Routes>
+			<Route path={'/'} exact={true} element={<Landing />} />
+			<Route path={'/signin'} element={<SignIn />} />
+			<Route path={'/signup'} element={<SignUp />} />
+			<Route path={'/sungalss'} element={<Sunglass />} />
+			<Route path={'/glass'} element={<Glass />} />
+			<Route path={'/service'} element={<Service />} />
+			<Route path={'/kakao/callback'} element={<Kakao />} />
+		</Routes>
+	);
 }
 
 export default App;
