@@ -11,7 +11,7 @@ export const StyledButton = styled.button`
   margin-left: ${(props) => (props.mg_left ? props.mg_left : '0px')};
   margin-right: ${(props) => (props.mg_right ? props.mg_right : '0px')};
   border-radius: ${(props) => (props.bd_radius ? props.bd_radius : '0px')};
-  border: 1px solid ${(props) => (props.bd_color ? props.bd_color : '0px')};
+  border: 0.1px solid ${(props) => (props.bd_color ? props.bd_color : '0px')};
   &:hover {
     cursor: pointer;
   }

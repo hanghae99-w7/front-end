@@ -1,5 +1,9 @@
 // Import react
-import { Fragment, useRef } from 'react';
+import { useState, useEffect, Fragment, useRef } from 'react';
+
+// Import redux
+import { useDispatch, useSelector } from 'react-redux';
+import { headerAction } from '../../redux/modules/user';
 
 // Import packages
 import { useNavigate } from 'react-router-dom';
@@ -7,6 +11,7 @@ import { useMediaQuery } from 'react-responsive';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { BiLockAlt } from 'react-icons/bi';
 import { BsXLg } from 'react-icons/bs';
+import jwt_decode from 'jwt-decode';
 
 // Import components & elements
 import Button from '../../elements/button/Button';
@@ -59,10 +64,13 @@ import {
   HeaderBasketButtonGroup,
 } from './Header.styled';
 import { theme } from '../../shared/theme';
-import styled from 'styled-components';
+import { SignInSignUpNotice } from '../../pages/signin/SignIn';
 
 const Header = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const is_login = useSelector((state) => state.user.is_login);
 
   const asideBarRef = useRef();
   const asideBackRef = useRef();
@@ -91,6 +99,30 @@ const Header = () => {
     asideBackRef.current.style.opacity = '0';
   };
 
+  const signOut = () => {
+    window.sessionStorage.removeItem('authorization');
+    window.sessionStorage.removeItem('refresh-token');
+    dispatch(headerAction({ is_login: false }));
+  }
+
+  useEffect(() => {
+    try {
+      if (
+        window.sessionStorage.getItem('authorization') !== '' ||
+        window.sessionStorage.getItem('authorization') !== undefined ||
+        window.sessionStorage.getItem('authorization') !== null
+      ) {
+        const nickname = jwt_decode(
+          window.sessionStorage.getItem('authorization')
+        ).sub;
+        console.log(nickname);
+        dispatch(headerAction({ is_login: true }));
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }, []);
+
   const isSmallScreen = useMediaQuery({
     query: '(max-width: 1023px)',
   });
@@ -102,7 +134,7 @@ const Header = () => {
           <HeaderBoxSmall color={theme.quaternaryColor}>
             <HeaderBoxSmallContainer>
               <HeaderBoxSmallInner>
-                <HeaderBoxSmallLogo>
+                <HeaderBoxSmallLogo onClick={() => navigate('/')}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 166 15.9"
@@ -141,7 +173,7 @@ const Header = () => {
                 <AsideBarContentUlSecond>
                   <AsideBarContentLiSecond>스타일</AsideBarContentLiSecond>
                   <AsideBarContentLiSecond>브랜드이슈</AsideBarContentLiSecond>
-                  <AsideBarContentLiSecond>매장보기</AsideBarContentLiSecond>
+                  <AsideBarContentLiSecond>문의하기</AsideBarContentLiSecond>
                   <AsideBarContentLiSecond onClick={() => navigate('/service')}>
                     문의하기
                   </AsideBarContentLiSecond>
@@ -149,9 +181,15 @@ const Header = () => {
               </AsideBarContentSecond>
               <AsideBarFooter>
                 <AsideBarFooterUl>
+                {is_login ? (
+                  <AsideBarFooterLi onClick={signOut}>
+                    로그아웃
+                    </AsideBarFooterLi>
+                ) : (
                   <AsideBarFooterLi onClick={() => navigate('/signin')}>
                     로그인
-                  </AsideBarFooterLi>
+                    </AsideBarFooterLi>
+                )}
                   <AsideBarFooterLi>관심상품</AsideBarFooterLi>
                   <AsideBarFooterLi>Shop in KR</AsideBarFooterLi>
                 </AsideBarFooterUl>
@@ -191,18 +229,24 @@ const Header = () => {
                     <HeaderBoxLargeLiSpan>브랜드이슈</HeaderBoxLargeLiSpan>
                   </HeaderBoxLargeLi>
                   <HeaderBoxLargeLi>
-                    <HeaderBoxLargeLiSpan>매장보기</HeaderBoxLargeLiSpan>
+                    <HeaderBoxLargeLiSpan>문의하기</HeaderBoxLargeLiSpan>
                   </HeaderBoxLargeLi>
-                  <HeaderBoxLargeLi onClick={() => navigate('/service')}>
-                    <>문의하기</>
-                  </HeaderBoxLargeLi>
+                  <HeaderBoxLargeLi
+                    onClick={() => navigate('/service')}
+                  ></HeaderBoxLargeLi>
                 </HeaderBoxLargeUl>
               </HeaderBoxLargeNav>
               <HeaderBoxLargeRight>
                 <HeaderBoxLargeCountry>Shop in KR</HeaderBoxLargeCountry>
-                <HeaderBoxLargeSignIn onClick={() => navigate('/signin')}>
-                  로그인
-                </HeaderBoxLargeSignIn>
+                {is_login ? (
+                  <HeaderBoxLargeSignIn onClick={signOut}>
+                    로그아웃
+                  </HeaderBoxLargeSignIn>
+                ) : (
+                  <HeaderBoxLargeSignIn onClick={() => navigate('/signin')}>
+                    로그인
+                  </HeaderBoxLargeSignIn>
+                )}
                 <HeaderBoxLargeBasket onClick={showBasketBar}>
                   <BiLockAlt></BiLockAlt>
                 </HeaderBoxLargeBasket>
