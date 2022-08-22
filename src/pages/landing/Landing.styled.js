@@ -112,5 +112,5 @@ export const LandingH1BtnBoxChangeTwo = styled.div`
   height: 100px;
   top: 69%;
   bottom: 0%;
-`
+`;
 
