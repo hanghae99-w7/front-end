@@ -82,7 +82,7 @@ export const LandingH1BtnBox2 = styled.div`
   text-align: center;
   width: 100%;
   height: 100px;
-  top: 77%;
+  top: 79%;
   bottom: 0%;
 `;
 
@@ -91,7 +91,7 @@ export const LandingH1BtnBox3 = styled.div`
   text-align: center;
   width: 100%;
   height: 100px;
-  top: 80%;
+  top: 83%;
   bottom: 0%;
 `;
 
