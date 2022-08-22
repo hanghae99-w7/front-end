@@ -202,6 +202,9 @@ export const AsideBarContentLiFirst = styled.li`
   font-family: AppleSDGothicNeoB;
   line-height: 47px;
   font-size: 24px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 export const AsideBarContentSecond = styled.div`
   margin-top: 30px;
@@ -213,6 +216,9 @@ export const AsideBarContentLiSecond = styled.li`
   font-family: AppleSDGothicNeoB;
   line-height: 37px;
   font-size: 17px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 export const AsideBarFooter = styled.div`
   position: absolute;
@@ -224,6 +230,9 @@ export const AsideBarFooterLi = styled.li`
   font-family: AppleSDGothicNeoB;
   line-height: 29px;
   font-size: 13px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 // Aside background
@@ -239,7 +248,6 @@ export const AsideBackground = styled.div`
   opacity: 0;
   transition: opacity 0.6s ease, visibility 0.6s ease;
 `;
-
 
 // Basket
 export const HeaderBasket = styled.div`

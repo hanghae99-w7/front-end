@@ -27,9 +27,9 @@ import {
 } from './Footer.styled';
 
 const Footer = () => {
-	const [service, setService] = useState(true);
-	const [law, setLaw] = useState(true);
-	const [social, setSocial] = useState(true);
+	const [service, setService] = useState(false);
+	const [law, setLaw] = useState(false);
+	const [social, setSocial] = useState(false);
 
 	const isSmallScreen = useMediaQuery({
 		query: '(max-width: 770px)',
