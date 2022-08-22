@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 //한 행에 카드 6개씩 나오는 width
 export const CardBox = styled.div`
-  width: 362.19px;
+  width: 362.188px;
   height: 568.75px;
   position: relative;
   font-family: 'AppleSDGothicNeoL';
@@ -17,7 +17,7 @@ export const CardBox2 = styled.div`
 `;
 
 export const CardImg = styled.img`
-  width: 362.19px;
+  width: 362.188px;
   height: 490.75px;
 `;
 
@@ -63,8 +63,8 @@ export const CardTextBox2 = styled.div`
 export const CardItemName = styled.p`
 width: 61.5px;
 height: 3px;
-font-size: 13px;
-font-weight: 700;
+font-size: 14px;
+font-weight: 600;
 text-align: left;
 margin-top: 3px;
 &:hover {
