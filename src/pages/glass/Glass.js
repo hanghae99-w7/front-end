@@ -3,6 +3,7 @@ import Card2 from '../../components/card/Card2';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import Categori from '../../components/categoriBox/Categori';
+import {BsFillMenuButtonWideFill} from 'react-icons/bs';
 
 import {
   GlassFull,
