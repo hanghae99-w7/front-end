@@ -2,12 +2,56 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { api } from '../../shared/api';
 
-export const kakaoAuthThunk = createAsyncThunk(
-  'member/kakaoLogin',
+export const emailDupCheckThunk = createAsyncThunk(
+  'user/emailDupCheck',
   async (payload, thunkAPI) => {
     const resData = await api
-      .get(`/members/kakao/callback?code=${payload.code}`)
+      .post(`/api/emailcheck`, payload)
+      .then((res) => res.data.success)
+      .catch((error) => console.err(error));
+    return thunkAPI.fulfillWithValue(resData);
+  }
+);
+
+export const addUserThunk = createAsyncThunk(
+  'use/addUser',
+  async (payload, thunkAPI) => {
+    const resData = await api
+      .post(`/api/signup`, payload)
+      .then((res) => res.data);
+    return thunkAPI.fulfillWithValue(resData);
+  }
+);
+
+export const signUserThunk = createAsyncThunk(
+  'user/signUser',
+  async (payload, thunkAPI) => {
+    const resData = await api
+      .post(`/api/login`, payload)
+      .then((res) => res)
+      .catch((err) => console.err(err));
+    console.log(resData);
+    window.sessionStorage.setItem(
+      'authorization',
+      resData.headers['authorization'].split(' ')[1]
+    );
+    window.sessionStorage.setItem(
+      'refresh-token',
+      resData.headers['refresh-token']
+    );
+
+    return thunkAPI.fulfillWithValue(resData.data.success);
+  }
+);
+
+export const kakaoAuthThunk = createAsyncThunk(
+  'user/kakaoLogin',
+  async (payload, thunkAPI) => {
+    console.log(payload);
+    const resData = await api
+      .get(`/api/kakao/callback?code=${payload.code}`)
       .then((res) => res);
+    console.log(resData);
     window.sessionStorage.setItem(
       'authorization',
       resData.headers['authorization'].split(' ')[1]
@@ -23,18 +67,25 @@ export const kakaoAuthThunk = createAsyncThunk(
 
 const initialState = {
   is_login: false,
-  username: '',
 };
 
 export const userSlice = createSlice({
   name: 'user',
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    headerAction: (state, action) => {
+      state.is_login = action.payload.is_login;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(kakaoAuthThunk.fulfilled, (state, action) => {
-      state.is_login = true;
+      state.is_login = action.payload;
+    });
+    builder.addCase(signUserThunk.fulfilled, (state, action) => {
+      state.is_login = action.payload;
     });
   },
 });
 
+export const { headerAction } = userSlice.actions;
 export default userSlice.reducer;
