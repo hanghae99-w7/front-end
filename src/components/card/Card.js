@@ -9,11 +9,11 @@ import {
   CardItemPrice,
 } from './Card.styled';
 
-const Card = ({ id, detail, price, name, imgUrl }) => {
+const Card = ({ id, price, name, imgUrl }) => {
   const navigate = useNavigate();
 
   return (
-    <CardBox key={detail}>
+    <CardBox>
       <CardImg src={imgUrl} onClick={() => navigate(`/detail/${id}`)} />
       <CardTextBox>
         <CardItemName>{name}</CardItemName>
