@@ -20,7 +20,6 @@ export const LandingVideo = styled.video`
   height: auto;
   display: block;
   background-size: auto;
-  display: block;
 `;
 
 export const LandingImg = styled.img`
@@ -76,6 +75,7 @@ export const LandingH1BtnBox = styled.div`
 `;
 
 export const LandingH1BtnBox2 = styled.div`
+  z-index: 999;
   position: absolute;
   text-align: center;
   width: 100%;
@@ -85,6 +85,7 @@ export const LandingH1BtnBox2 = styled.div`
 `;
 
 export const LandingH1BtnBox3 = styled.div`
+  z-index: 999;
   position: absolute;
   text-align: center;
   width: 100%;
