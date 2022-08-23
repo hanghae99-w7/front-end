@@ -9,7 +9,6 @@ export const getItemThunk = createAsyncThunk(
     const resData = await api.get(
       `/api/iteminfo?page=${payload.page}&size=14&orderby=${payload.orderby}&category=${payload.category}`
     ).then((res) => res.data);
-    console.log(resData.data)
     return thunkAPI.fulfillWithValue(resData.data);
   }
 );
@@ -17,11 +16,9 @@ export const getItemThunk = createAsyncThunk(
 export const getSingleItemThunk = createAsyncThunk(
   'item/getSingleItem',
   async (payload, thunkAPI) => {
-    console.log(payload);
     const resData = await api
       .get(`/api/iteminfo/${payload}`)
       .then((res) => res);
-    console.log(resData.data);
     return thunkAPI.fulfillWithValue(resData.data);
   }
 );
@@ -40,9 +37,7 @@ export const itemSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getItemThunk.fulfilled, (state, action) => {
       state.is_loaded = true;
-      console.log(action.payload)
       state.item = [...state.item, ...action.payload];
-      console.log(state.item)
     });
     builder.addCase(getSingleItemThunk.fulfilled, (state, action) => {
       state.detail_is_loaded = true;

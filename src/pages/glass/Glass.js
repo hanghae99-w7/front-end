@@ -22,6 +22,7 @@ const Glass = () => {
   const [page, setPage] = useState(0);
   const items = useSelector((state) => state.item.item);
   const is_loaded = useSelector((state) => state.item.is_loaded);
+  const [differentView, setDifferentView] = useState(true);
 
   const handleScroll = () => {
     const scrollHeight = document.documentElement.scrollHeight;
@@ -44,7 +45,10 @@ const Glass = () => {
     dispatch(getItemThunk({ page, orderby: 'id', category: 'glasses' }));
   }, [page]);
 
-
+  const viewChange = () => {
+    setDifferentView(!differentView);
+  };
+  console.log(differentView);
 
   return (
     <>
@@ -55,7 +59,11 @@ const Glass = () => {
       <ContentTop>
         <ContentTopTitle>안경 / 전체보기</ContentTopTitle>
         <ContentTopIconsbox>
-          <BsFillGrid3X3GapFill style={{ fontSize: '17px' }} /> 간략보기
+          <BsFillGrid3X3GapFill
+            style={{ fontSize: '17px' }}
+            onClick={viewChange}
+          />{' '}
+          간략보기
         </ContentTopIconsbox>
         &nbsp;
         <ContentTopIconsbox2>
@@ -66,17 +74,20 @@ const Glass = () => {
         {is_loaded ? (
           <Fragment>
             {items.map((item) => {
-              return <Card 
-              key={item.itemId} 
-              id={item.itemId} 
-              detail={item.detailPageUrl} 
-              price={item.price} 
-              name = {item.productName} 
-              imgUrl={item.imgUrl}/>;
+              return (
+                <Card
+                  key={item.imteId}
+                  id={item.itemId}
+                  price={item.price}
+                  name={item.productName}
+                  imgUrl={item.imgUrl}
+                  cardView={differentView}
+                />
+              );
             })}
           </Fragment>
         ) : (
-          <CardSkeleton/>
+          <CardSkeleton />
         )}
       </GlassFull>
       <Footer />
