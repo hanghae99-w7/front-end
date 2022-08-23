@@ -23,6 +23,8 @@ import sunglass_7 from './sunglassCategoriImage/sunglass_7.jpg'
 import sunglass_8 from './sunglassCategoriImage/sunglass_8.jpg'
 import sunglass_9 from './sunglassCategoriImage/sunglass_9.jpg'
 import sunglass_10 from './sunglassCategoriImage/sunglass_10.jpg'
+import Package from './detailImage/package.png'
+import Placeholder from './detailImage/placeholder.png'
 
 export { 
   landing_1, 
@@ -49,5 +51,7 @@ export {
   sunglass_7,
   sunglass_8,
   sunglass_9,
-  sunglass_10
+  sunglass_10,
+  Package,
+  Placeholder
 };
