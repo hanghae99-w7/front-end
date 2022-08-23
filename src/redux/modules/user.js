@@ -30,7 +30,6 @@ export const signUserThunk = createAsyncThunk(
       .post(`/api/login`, payload)
       .then((res) => res)
       .catch((err) => console.err(err));
-    console.log(resData);
     window.sessionStorage.setItem(
       'authorization',
       resData.headers['authorization'].split(' ')[1]
@@ -51,7 +50,6 @@ export const kakaoAuthThunk = createAsyncThunk(
     const resData = await api
       .get(`/api/kakao/callback?code=${payload.code}`)
       .then((res) => res);
-    console.log(resData);
     window.sessionStorage.setItem(
       'authorization',
       resData.headers['authorization'].split(' ')[1]
