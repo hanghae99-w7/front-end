@@ -68,6 +68,7 @@ const Glass = () => {
             {items.map((item) => {
               return <Card 
               key={item.itemId} 
+              id={item.itemId} 
               detail={item.detailPageUrl} 
               price={item.price} 
               name = {item.productName} 
