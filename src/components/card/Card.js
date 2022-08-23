@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment,memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import {
@@ -44,4 +44,4 @@ const Card = ({ id, price, name, imgUrl, cardView }) => {
   );
 };
 
-export default Card;
+export default memo(Card);

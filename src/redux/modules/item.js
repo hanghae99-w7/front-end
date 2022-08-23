@@ -18,7 +18,7 @@ export const getSingleItemThunk = createAsyncThunk(
   async (payload, thunkAPI) => {
     const resData = await api
       .get(`/api/iteminfo/${payload}`)
-      .then((res) => res);
+      .then((res) => res.data);
     return thunkAPI.fulfillWithValue(resData.data);
   }
 );

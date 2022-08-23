@@ -42,7 +42,7 @@ const Glass = () => {
   }, []);
 
   useEffect(() => {
-    dispatch(getItemThunk({ page, orderby: 'id', category: 'glasses' }));
+    dispatch(getItemThunk({ page, orderby: 'id', category: 'sunglasses' }));
   }, [page]);
 
   const viewChange = () => {
@@ -87,7 +87,7 @@ const Glass = () => {
             })}
           </Fragment>
         ) : (
-          <CardSkeleton />
+          <CardSkeleton  />
         )}
       </GlassFull>
       <Footer />
