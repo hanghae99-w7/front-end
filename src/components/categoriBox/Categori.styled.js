@@ -8,6 +8,7 @@ align-items: center;
 justify-content: center;
 font-weight: 600;
 font-family: 'AppleSDGothicNeoL';
+overflow: hidden;
 `; 
 
 export const CategoriImgTextBox = styled.div`
