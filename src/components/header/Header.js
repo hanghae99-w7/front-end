@@ -173,7 +173,7 @@ const Header = () => {
                 <AsideBarContentUlSecond>
                   <AsideBarContentLiSecond>스타일</AsideBarContentLiSecond>
                   <AsideBarContentLiSecond>브랜드이슈</AsideBarContentLiSecond>
-                  <AsideBarContentLiSecond>문의하기</AsideBarContentLiSecond>
+                  <AsideBarContentLiSecond>매장보기</AsideBarContentLiSecond>
                   <AsideBarContentLiSecond onClick={() => navigate('/service')}>
                     문의하기
                   </AsideBarContentLiSecond>
