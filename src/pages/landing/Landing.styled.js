@@ -44,8 +44,8 @@ export const LandingImg1Box = styled.div`
 `;
 
 export const LandingVideo1Box = styled.video`
-  width: 100vw;
-  height: 100vw;
+  width: auto;
+  height: auto;
   object-fit: cover;
   display: block;
 `;
@@ -101,7 +101,7 @@ export const LandingH1BtnBoxChange = styled.div`
   height: 100px;
   top: 74%;
   bottom: 0%;
-`
+`;
 
 export const LandingH1BtnBoxChangeTwo = styled.div`
   position: absolute;
@@ -111,4 +111,3 @@ export const LandingH1BtnBoxChangeTwo = styled.div`
   top: 69%;
   bottom: 0%;
 `;
-
