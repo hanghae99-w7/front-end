@@ -7,12 +7,11 @@ import {
 } from './Card.styled';
 
 
-const Card = ({detail, price, name, imgUrl}) =>{ 
 
 
   return (
-    <CardBox key={detail}>
-      <CardImg src={imgUrl}/>
+    <CardBox key={key}>
+      <CardImg src={imgUrl} />
       <CardTextBox>
         <CardItemName>{name}</CardItemName>
         <br />
