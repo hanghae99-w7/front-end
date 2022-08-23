@@ -27,6 +27,8 @@ import {
   sunglass_10
  }from '../../static/image/image';
 
+
+ //안경 페이지 카테고리박스
 const Categori = () => {
 
   return(
@@ -71,6 +73,8 @@ const Categori = () => {
 export default Categori;
 
 
+
+//선글라스 페이지 카테고리박스
 export const SunglassCategori2 = () => {
 
   return(

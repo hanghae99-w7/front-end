@@ -10,6 +10,9 @@ export const CardBox = styled.div`
 export const CardImg = styled.img`
   width: 450px;
   height: 570px;
+  :hover {
+    cursor: pointer
+  };
 `;
 
 export const CardTextBox = styled.div`

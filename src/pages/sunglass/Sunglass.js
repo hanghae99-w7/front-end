@@ -1,7 +1,6 @@
 import Card from '../../components/card/Card';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
-import Categori from '../../components/categoriBox/Categori';
 import { SunglassCategori2 } from '../../components/categoriBox/Categori';
 import {
   BsFilter,

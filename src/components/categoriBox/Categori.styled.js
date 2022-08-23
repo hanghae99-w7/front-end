@@ -26,12 +26,14 @@ gap:10px 20px;
 }
 `;
 
+
 export const CategoriImg = styled.img`
 width:72px;
 height:72px;
 border-radius: 50%;
 position: relative;
 padding: 3px;
+//이미지와 텍스트를 묶은 박스에 호버하면 이미지에 아웃라인 생성
 ${CategoriImgTextBox}:hover &{
   outline: 1px solid black;
 }
