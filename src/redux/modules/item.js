@@ -6,12 +6,11 @@ import { api } from '../../shared/api';
 export const getItemThunk = createAsyncThunk(
   'item/getItem',
   async (payload, thunkAPI) => {
-    console.log(payload);
     const resData = await api.get(
-      `/api/iteminfo&page=${payload.page}?size=14&orderby=${payload.orderby}&category=${payload.category}`
+      `/api/iteminfo?page=${payload.page}&size=14&orderby=${payload.orderby}&category=${payload.category}`
     ).then((res) => res.data);
-    console.log(resData);
-    return thunkAPI.fulfillWithValue(resData);
+    console.log(resData.data)
+    return thunkAPI.fulfillWithValue(resData.data);
   }
 );
 
@@ -27,8 +26,9 @@ export const itemSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getItemThunk.fulfilled, (state, action) => {
       state.is_loaded = true;
-      console.log(action.payload);
-      state.item = action.payload;
+      console.log(action.payload)
+      state.item = [...state.item, ...action.payload];
+      console.log(state.item)
     });
   },
 });
