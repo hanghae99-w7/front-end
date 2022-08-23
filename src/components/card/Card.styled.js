@@ -7,9 +7,24 @@ export const CardBox = styled.div`
   font-family: 'AppleSDGothicNeoL';
 `;
 
+export const CardBox2 = styled.div`
+  width:300px;
+  height: 430px;
+  position: relative;
+  font-family: 'AppleSDGothicNeoL';
+`
+
 export const CardImg = styled.img`
   width: 450px;
   height: 570px;
+  :hover {
+    cursor: pointer
+  };
+`;
+
+export const CardImg2 = styled.img`
+  width: 300px;
+  height: 430px;
   :hover {
     cursor: pointer
   };
@@ -31,6 +46,7 @@ export const CardTextBox = styled.div`
   }
   }
 `;
+
 
 export const CardItemName = styled.p`
 width: 150px;
