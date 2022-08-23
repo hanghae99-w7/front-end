@@ -1,3 +1,4 @@
+// import { Link } from 'react-router-dom';
 import {
   CardBox,
   CardImg,
@@ -8,10 +9,16 @@ import {
 
 
 
+const Card = ({key, detail, price, name, imgUrl}) =>{ 
+
+  // const goDetail=()=>{
+  //    {detail}
+  //   console.log({detail})
+  // }
 
   return (
     <CardBox key={key}>
-      <CardImg src={imgUrl} />
+      <CardImg src={imgUrl}/>
       <CardTextBox>
         <CardItemName>{name}</CardItemName>
         <br />
