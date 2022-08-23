@@ -33,7 +33,7 @@ export const CardTextBox = styled.div`
 `;
 
 export const CardItemName = styled.p`
-width: 61.5px;
+width: 150px;
 height: 3px;
 font-size: 14px;
 font-weight: 600;
