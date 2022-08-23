@@ -10,7 +10,7 @@ import { card_1 } from '../../static/image/image';
 const Card = () => {
   return (
     <CardBox>
-      <CardImg src={card_1} />
+      <CardImg src={card_1} onClick/>
       <CardTextBox>
         <CardItemName>로티 01</CardItemName>
         <br />

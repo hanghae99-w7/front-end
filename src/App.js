@@ -19,7 +19,7 @@ function App() {
 			<Route path={'/'} exact={true} element={<Landing />} />
 			<Route path={'/signin'} element={<SignIn />} />
 			<Route path={'/signup'} element={<SignUp />} />
-			<Route path={'/sungalss'} element={<Sunglass />} />
+			<Route path={'/sunglass'} element={<Sunglass />} />
 			<Route path={'/glass'} element={<Glass />} />
 			<Route path={'/service'} element={<Service />} />
 			<Route path={'/kakao/callback'} element={<Kakao />} />

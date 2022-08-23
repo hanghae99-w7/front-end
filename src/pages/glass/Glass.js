@@ -1,18 +1,22 @@
 import Card from '../../components/card/Card';
-import Card2 from '../../components/card/Card2';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import Categori from '../../components/categoriBox/Categori';
+import { BsFilter, BsFillGrid3X3GapFill } from 'react-icons/bs';
 
 import {
   GlassFull,
   CategoriListFullbox,
   ContentTop,
   ContentTopTitle,
-  ContentTopBtnBox,
+  ContentTopIconsbox,
+  ContentTopIconsbox2,
 } from './Glass.styled';
 
+
+
 const Glass = () => {
+  
   return (
     <>
       <Header />
@@ -21,10 +25,13 @@ const Glass = () => {
       </CategoriListFullbox>
       <ContentTop>
         <ContentTopTitle>안경 / 전체보기</ContentTopTitle>
-        <ContentTopBtnBox>
-          <button>간략보기</button>
-          <button>필터</button>
-        </ContentTopBtnBox>
+        <ContentTopIconsbox>
+          <BsFillGrid3X3GapFill style={{ fontSize: '17px' }} /> 간략보기
+        </ContentTopIconsbox>
+        &nbsp;
+        <ContentTopIconsbox2>
+          <BsFilter style={{ fontSize: '18px' }} /> 필터
+        </ContentTopIconsbox2>
       </ContentTop>
       <GlassFull>
         <Card />
@@ -37,18 +44,10 @@ const Glass = () => {
         <Card />
         <Card />
         <Card />
-        <Card2 />
-        <Card2 />
-        <Card2 />
-        <Card2 />
-        <Card2 />
-        <Card2 />
-        <Card2 />
-        <Card2 />
-        <Card2 />
-        <Card2 />
-        <Card2 />
-        <Card2 />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </GlassFull>
       <Footer />
     </>
