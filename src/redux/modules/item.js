@@ -14,9 +14,23 @@ export const getItemThunk = createAsyncThunk(
   }
 );
 
+export const getSingleItemThunk = createAsyncThunk(
+  'item/getSingleItem',
+  async (payload, thunkAPI) => {
+    console.log(payload);
+    const resData = await api
+      .get(`/api/iteminfo/${payload}`)
+      .then((res) => res);
+    console.log(resData.data);
+    return thunkAPI.fulfillWithValue(resData.data);
+  }
+);
+
 const initialState = {
   is_loaded: false,
   item: [],
+  detail_is_loaded: false,
+  item_single: [],
 };
 
 export const itemSlice = createSlice({
@@ -29,6 +43,10 @@ export const itemSlice = createSlice({
       console.log(action.payload)
       state.item = [...state.item, ...action.payload];
       console.log(state.item)
+    });
+    builder.addCase(getSingleItemThunk.fulfilled, (state, action) => {
+      state.detail_is_loaded = true;
+      state.item_single = action.payload;
     });
   },
 });

@@ -19,10 +19,9 @@ import { Fragment, useEffect } from 'react';
 
 const Glass = () => {
   const dispatch = useDispatch();
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const items = useSelector((state) => state.item.item);
   const is_loaded = useSelector((state) => state.item.is_loaded);
-  console.log(items)
 
   const handleScroll = () => {
     const scrollHeight = document.documentElement.scrollHeight;
@@ -66,7 +65,7 @@ const Glass = () => {
       <GlassFull>
         {is_loaded ? (
           <Fragment>
-            {items.data.map((item) => {
+            {items.map((item) => {
               return <Card 
               key={item.itemId} 
               detail={item.detailPageUrl} 
