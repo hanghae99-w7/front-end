@@ -1,37 +1,40 @@
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+
+
+//url 주소 ㅋㅋ
+const url = "http://3.39.23.19:8080"
+
+//통신
 const initialState = {
-  // askingList: [
-  //   {
-  //     id: 1,
-  //     username: 'nick1',
-  //     title: '제목1'
-  //     content: '컨텐츠1'
-  //     adminChecked: 'false' // 관리자가 체크하면 true로 바뀜 
-  //     createdAt: '2022/08/22'// 게시글을 만들때 title,content 만들면 생성된 날짜 붙여주는거
-  //     modifiedAt: '' //modify, create를 같이 보여줌
-  //   },
-  //    {
-  //     id: 1,
-  //     username: 'nick1',
-  //     title: '제목1'
-  //     content: '컨텐츠1'
-  //     adminChecked:
-  //     createdAt:
-  //     modifiedAt:
-  //   },
-  //    {
-  //     id: 1,
-  //     username: 'nick1',
-  //     title: '제목1'
-  //     content: '컨텐츠1'
-  //     adminChecked:
-  //     createdAt:
-  //     modifiedAt:
-  //   },
-  // ],
+  serviceList: [],
 };
 
-is_loadedc="false"
 
-const counter = (state = initialState, action) => {
-  switch
-}
+//기본적인 thunk 틀 : url이 써진 곳이랑 통신을 하겠다는 뜻.
+//url 앞 get은 method임
+export const getServiceList = createAsyncThunk(
+  "getServiceList",
+  async (payload,thunkAPI) => {
+    try {
+      const response = await axios.get("http://3.39.23.19:8080/servicecenter");
+      return console.log(response)
+      // return thunkAPI.fulfillWithValue(response)
+    }
+    catch(e){
+      return thunkAPI.rejectWithValue(e)
+    }
+  }
+)
+
+//책장 /slice를 모은게 store 
+const service = createSlice({
+	name: 'serviceList',
+	initialState,
+	reducers: {},
+  extraReducers: {},
+});
+
+export const {  } = service.actions;
+export default service.reducer;

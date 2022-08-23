@@ -44,8 +44,6 @@ export const LandingImg1Box = styled.div`
 `;
 
 export const LandingVideo1Box = styled.video`
-  width: 100vw;
-  height: 100vw;
   width: auto;
   height: auto;
   object-fit: cover;
