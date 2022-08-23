@@ -35,9 +35,8 @@ export const SmallFooterSection = styled.div`
 `;
 
 export const SmallFooterTitle = styled.div`
-  font-size: 13px;
-  padding-bottom: 16px;
-  color: #343434;
+	font-size: 13px;
+	color: #343434;
 
 	button {
 		display: flex;
@@ -45,16 +44,17 @@ export const SmallFooterTitle = styled.div`
 		width: 100%;
 		border: none;
 		background: none;
-  }
+		padding: 14px 0 15px;
+	}
 
-  span {
-    color: #343434;
-    letter-spacing: -0.3px;
-    display: inline-block;
-    &:hover {
-      cursor: pointer;
-    }
-  }
+	span {
+		color: #343434;
+		letter-spacing: -0.3px;
+		display: inline-block;
+		&:hover {
+			cursor: pointer;
+		}
+	}
 
 	span {
 		color: #343434;
