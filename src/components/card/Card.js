@@ -5,16 +5,18 @@ import {
   CardItemName,
   CardItemPrice,
 } from './Card.styled';
-import { card_1 } from '../../static/image/image';
 
-const Card = () => {
+
+const Card = ({detail, price, name, imgUrl}) =>{ 
+
+
   return (
-    <CardBox>
-      <CardImg src={card_1} onClick/>
+    <CardBox key={detail}>
+      <CardImg src={imgUrl}/>
       <CardTextBox>
-        <CardItemName>로티 01</CardItemName>
+        <CardItemName>{name}</CardItemName>
         <br />
-        <CardItemPrice>280,000원</CardItemPrice>
+        <CardItemPrice>{price}</CardItemPrice>
         <svg
           stroke-width="0"
           viewBox="0 0 24 24"
