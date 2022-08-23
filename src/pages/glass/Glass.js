@@ -41,10 +41,8 @@ const Glass = () => {
   }, []);
 
   useEffect(() => {
-    dispatch(getItemThunk({ page, orderby: 'id', category: 'glasses' }));
+    dispatch(getItemThunk({ page, orderby: 'id', category: 'sunglasses' }));
   }, [page]);
-
-
 
   return (
     <>
@@ -66,17 +64,20 @@ const Glass = () => {
         {is_loaded ? (
           <Fragment>
             {items.map((item) => {
-              return <Card 
-              key={item.itemId} 
-              id={item.itemId} 
-              detail={item.detailPageUrl} 
-              price={item.price} 
-              name = {item.productName} 
-              imgUrl={item.imgUrl}/>;
+              return (
+                <Card
+                  key={item.itemId}
+                  id={item.itemId}
+                  detail={item.detailPageUrl}
+                  price={item.price}
+                  name={item.productName}
+                  imgUrl={item.imgUrl}
+                />
+              );
             })}
           </Fragment>
         ) : (
-          <CardSkeleton/>
+          <CardSkeleton />
         )}
       </GlassFull>
       <Footer />

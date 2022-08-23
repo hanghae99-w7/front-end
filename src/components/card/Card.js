@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import {
@@ -30,4 +31,4 @@ const Card = ({ id, detail, price, name, imgUrl }) => {
   );
 };
 
-export default Card;
+export default memo(Card);
