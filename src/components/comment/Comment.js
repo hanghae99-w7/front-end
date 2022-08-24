@@ -1,8 +1,15 @@
+// React
 import { useState, useRef } from 'react';
+
+// Packages
 import jwt_decode from 'jwt-decode';
 
-import styled from 'styled-components';
-import Button from '../../elements/button/Button';
+// Style
+import {
+  ServiceListBox,
+  ServiceListTitle,
+  ServiceListContent,
+} from './Comment.styled';
 
 const Comment = ({
 	id,
@@ -87,63 +94,3 @@ const Comment = ({
 };
 
 export default Comment;
-
-export const ServiceListBox = styled.div`
-	border-bottom: 1px solid #e0e0e0;
-`;
-
-export const ServiceListTitle = styled.div`
-	color: #343434;
-	.serviceContentBox {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-		border: none;
-		background: none;
-		padding: 20px 0 20px;
-		font-size: 16px;
-		font-family: 'AppleSDGothicNeoM';
-	}
-	.serviceContentTitle {
-		cursor: pointer;
-	}
-	.serviceSub {
-		color: #6e6e6e;
-		letter-spacing: -0.3px;
-		font-size: 12px;
-		float: right;
-
-		.serviceUser {
-			float: right;
-			pointer-events: none;
-			margin-top: 3px;
-		}
-		.serviceDate {
-			float: right;
-			margin-left: 17px;
-			pointer-events: none;
-			margin-top: 3px;
-		}
-	}
-	a:link {
-		text-decoration: none;
-	}
-	a:visited {
-		text-decoration: none;
-		color: #343434;
-	}
-
-	input {
-		float: right;
-		margin-left: 6px;
-	}
-`;
-
-export const ServiceListContent = styled.div`
-	display: none;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	font-size: 14px;
-	line-height: 20px;
-	color: #343434;
-`;

@@ -39,7 +39,6 @@ const Service = () => {
 		query: '(max-width: 770px)',
 	});
 
-	//modules.service에 있는 getServiceList함수를 실행시킴
 	useEffect(() => {
 		dispatch(getServiceThunk());
 	}, []);
