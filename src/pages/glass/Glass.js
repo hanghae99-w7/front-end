@@ -57,24 +57,39 @@ const Glass = () => {
   };
 
   const newProduct = () => {
-    setFilter(!filter);
-    dispatch(clearGlassItem());
-    setPage(0);
-    setOrderby('id');
+    if (orderby === 'id') {
+      alert('현재 선택된 정렬입니다');
+      setFilter(!filter);
+    } else {
+      setFilter(!filter);
+      dispatch(clearGlassItem());
+      setPage(0);
+      setOrderby('id');
+    }
   };
 
   const highPrice = () => {
-    setFilter(!filter);
-    dispatch(clearGlassItem());
-    setPage(0);
-    setOrderby('priceup');
+    if (orderby === 'priceup') {
+      alert('현재 선택된 정렬입니다');
+      setFilter(!filter);
+    } else {
+      setFilter(!filter);
+      dispatch(clearGlassItem());
+      setPage(0);
+      setOrderby('priceup');
+    }
   };
 
   const lowPrice = () => {
-    setFilter(!filter);
-    dispatch(clearGlassItem());
-    setPage(0);
-    setOrderby('pricedown');
+    if (orderby === 'pricedown') {
+      alert('현재 선택된 정렬입니다');
+      setFilter(!filter);
+    } else {
+      setFilter(!filter);
+      dispatch(clearGlassItem());
+      setPage(0);
+      setOrderby('pricedown');
+    }
   };
 
   return (

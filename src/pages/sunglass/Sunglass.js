@@ -22,7 +22,7 @@ import { Fragment, useEffect } from 'react';
 const Glass = () => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(0);
-  const [orderby,setOrderby] = useState('id');
+  const [orderby, setOrderby] = useState('id');
   const items = useSelector((state) => state.item.item_sunglasses);
   const is_loaded = useSelector((state) => state.item.is_loaded);
   const [differentView, setDifferentView] = useState(true);
@@ -58,24 +58,39 @@ const Glass = () => {
   };
 
   const newProduct = () => {
-    setFilter(!filter);
-    dispatch(clearSunglassItem());
-    setPage(0);
-    setOrderby('id');
+    if (orderby === 'id') {
+      alert('현재 선택된 정렬입니다');
+      setFilter(!filter);
+    } else {
+      setFilter(!filter);
+      dispatch(clearSunglassItem());
+      setPage(0);
+      setOrderby('id');
+    }
   };
 
   const highPrice = () => {
-    setFilter(!filter);
-    dispatch(clearSunglassItem());
-    setPage(0);
-    setOrderby('priceup');
+    if (orderby === 'priceup') {
+      alert('현재 선택된 정렬입니다');
+      setFilter(!filter);
+    } else {
+      setFilter(!filter);
+      dispatch(clearSunglassItem());
+      setPage(0);
+      setOrderby('priceup');
+    }
   };
 
   const lowPrice = () => {
-    setFilter(!filter);
-    dispatch(clearSunglassItem());
-    setPage(0);
-    setOrderby('pricedown');
+    if (orderby === 'pricedown') {
+      alert('현재 선택된 정렬입니다');
+      setFilter(!filter);
+    } else {
+      setFilter(!filter);
+      dispatch(clearSunglassItem());
+      setPage(0);
+      setOrderby('pricedown');
+    }
   };
 
   return (
