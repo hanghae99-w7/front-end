@@ -8,7 +8,6 @@ import {
 } from './Basket.styled';
 
 const Basket = () => {
-    
   return (
     <BasketBox>
       <BasketBoxImg src={Package} />

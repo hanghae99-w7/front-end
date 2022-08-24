@@ -3,8 +3,6 @@ import { Fragment,memo } from 'react';
 
 // Package
 import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { getbasketThunk } from '../../redux/modules/basket';
 
 // Style
 import {
@@ -19,10 +17,6 @@ import {
 
 const Card = ({ id, price, name, imgUrl, cardView }) => {
   const navigate = useNavigate();
-
-  const dispatch = useDispatch();
-  
-
 
   return (
     <Fragment>
