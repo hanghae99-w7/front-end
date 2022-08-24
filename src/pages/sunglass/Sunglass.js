@@ -45,7 +45,6 @@ const Glass = () => {
   }, []);
 
   useEffect(() => {
-    console.log('change page');
     dispatch(getItemThunk({ page, orderby: orderby, category: 'sunglasses' }));
   }, [page, orderby]);
 
