@@ -28,6 +28,7 @@ export const getSingleItemThunk = createAsyncThunk(
   }
 );
 
+
 const initialState = {
   is_loaded: false,
   item_glasses: [],
@@ -57,6 +58,8 @@ export const itemSlice = createSlice({
       state.detail_is_loaded = true;
       state.item_single = action.payload;
     });
+
+
   },
 });
 
