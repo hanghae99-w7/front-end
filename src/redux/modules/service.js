@@ -21,7 +21,7 @@ export const postServiceThunk = createAsyncThunk(
       authorization: `Bearer ${window.sessionStorage.getItem('authorization')}`,
       'refresh-token': `${window.sessionStorage.getItem('refresh-token')}`,
     };
-    const resData = await api
+    const resData = await api_auth
       .post('/api/servicecenter', payload, {
         headers,
       })
