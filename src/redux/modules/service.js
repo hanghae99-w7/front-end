@@ -21,6 +21,26 @@ export const postServiceThunk = createAsyncThunk(
   }
 );
 
+export const patchAdminCheckThunk = createAsyncThunk(
+  'service/patchAdminCheck',
+  async (payload, thunkAPI) => {
+    const resData = await api_auth
+      .patch(`/api/servicecenter/${payload}`)
+      .then((res) => res.data.data);
+    return thunkAPI.fulfillWithValue(resData);
+  }
+);
+
+export const deleteServiceThunk = createAsyncThunk(
+  'service/deleteService',
+  async (payload, thunkAPI) => {
+    const resData = await api_auth
+      .delete(`/api/servicecenter/${payload}`)
+      .then((res) => res.data.data);
+    return thunkAPI.fulfillWithValue(resData);
+  }
+);
+
 const initialState = {
 	serviceList: [],
 };
@@ -35,6 +55,9 @@ const service = createSlice({
 		});
 		builder.addCase(postServiceThunk.fulfilled, (state, action) => {
 			state.serviceList = [...state.serviceList, action.payload];
+		});
+    builder.addCase(deleteServiceThunk.fulfilled, (state, action) => {
+			state.serviceList = state.serviceList.filter((service) => service.id !== action.payload.id);
 		});
 	},
 });

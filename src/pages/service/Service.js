@@ -45,6 +45,8 @@ const Service = () => {
 
 	const onClickHandler = () => {
 		dispatch(postServiceThunk({ title, content }));
+		setTitle('');
+		setContent('');
 	};
 
 	return (

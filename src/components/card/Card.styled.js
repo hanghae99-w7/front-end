@@ -70,3 +70,9 @@ margin-left: 3px;
     cursor: pointer;
   }
 `
+
+export const CartItemIconBox = styled.div`
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+`

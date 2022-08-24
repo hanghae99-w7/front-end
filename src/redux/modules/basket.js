@@ -1,15 +1,15 @@
 // Redux import
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { api } from '../../shared/api';
+import { api_auth } from '../../shared/api';
 
 // Thunk 코드 작성
-export const getbasketThunk = createAsyncThunk(
-  'basket/getbasket',
+export const postbasketThunk = createAsyncThunk(
+  'basket/postbasket',
   async (payload, thunkAPI) => {
-    const resData = await api.get(
-      `/api/item/basket/${payload}`
-    ).then((res) => res.data);
-    return thunkAPI.fulfillWithValue(resData.data);
+    const resData = await api_auth
+      .post(`/api/item/basket/${payload}`)
+      .then((res) => res.data);
+    return thunkAPI.fulfillWithValue(resData.success);
   }
 );
 
@@ -21,13 +21,14 @@ const initialState = {
 export const basketSlice = createSlice({
   name: 'basket',
   initialState: initialState,
-  reducers: {},
-  extraReducers: (builder) => {
-    builder.addCase(getbasketThunk.fulfilled, (state, action) => {
+  reducers: {
+    addSelectBasket: (state, action) => {
       state.is_loaded = true;
-      state.item = [...state.item, ...action.payload];
-    });
+      state.basket = [...state.basket, action.payload];
+    },
   },
+  extraReducers: (builder) => {},
 });
 
+export const { addSelectBasket } = basketSlice.actions;
 export default basketSlice.reducer;
