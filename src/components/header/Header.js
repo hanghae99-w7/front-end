@@ -15,6 +15,7 @@ import jwt_decode from 'jwt-decode';
 
 // Import components & elements
 import Button from '../../elements/button/Button';
+import Basket from '../../components/basket/Basket';
 
 // Import style
 import {
@@ -103,7 +104,7 @@ const Header = () => {
     window.sessionStorage.removeItem('authorization');
     window.sessionStorage.removeItem('refresh-token');
     dispatch(headerAction({ is_login: false }));
-  }
+  };
 
   useEffect(() => {
     try {
@@ -181,15 +182,15 @@ const Header = () => {
               </AsideBarContentSecond>
               <AsideBarFooter>
                 <AsideBarFooterUl>
-                {is_login ? (
-                  <AsideBarFooterLi onClick={signOut}>
-                    로그아웃
+                  {is_login ? (
+                    <AsideBarFooterLi onClick={signOut}>
+                      로그아웃
                     </AsideBarFooterLi>
-                ) : (
-                  <AsideBarFooterLi onClick={() => navigate('/signin')}>
-                    로그인
+                  ) : (
+                    <AsideBarFooterLi onClick={() => navigate('/signin')}>
+                      로그인
                     </AsideBarFooterLi>
-                )}
+                  )}
                   <AsideBarFooterLi>관심상품</AsideBarFooterLi>
                   <AsideBarFooterLi>Shop in KR</AsideBarFooterLi>
                 </AsideBarFooterUl>
@@ -229,7 +230,9 @@ const Header = () => {
                     <HeaderBoxLargeLiSpan>브랜드이슈</HeaderBoxLargeLiSpan>
                   </HeaderBoxLargeLi>
                   <HeaderBoxLargeLi>
-                    <HeaderBoxLargeLiSpan>문의하기</HeaderBoxLargeLiSpan>
+                    <HeaderBoxLargeLiSpan onClick={() => navigate('/service')}>
+                      문의하기
+                    </HeaderBoxLargeLiSpan>
                   </HeaderBoxLargeLi>
                   <HeaderBoxLargeLi
                     onClick={() => navigate('/service')}
@@ -264,6 +267,7 @@ const Header = () => {
           <HeaderBasketForm>
             <HeaderBasketCartGroup>
               쇼핑백에 담긴 제품이 없습니다.
+              <Basket></Basket>
             </HeaderBasketCartGroup>
           </HeaderBasketForm>
           <HeaderBasketTotalGroup>

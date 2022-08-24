@@ -23,8 +23,7 @@ import { Fragment, useEffect } from 'react';
 const Glass = () => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(0);
-  const items = useSelector((state) => state.item.item);
-  console.log(items)
+  const items = useSelector((state) => state.item.item_sunglasses);
   const is_loaded = useSelector((state) => state.item.is_loaded);
   const [differentView, setDifferentView] = useState(true);
   const [filter, setFilter] = useState(false);
@@ -36,7 +35,8 @@ const Glass = () => {
     const clientHeight = document.documentElement.clientHeight;
     if (scrollTop + clientHeight >= scrollHeight) {
       console.log('페이지 끝에 스크롤이 닿았음');
-      setPage((page) => page + 1);
+      setPage((page) => page 
+      + 1);
     }
   };
 

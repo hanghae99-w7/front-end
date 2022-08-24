@@ -22,7 +22,7 @@ import { Fragment, useEffect } from 'react';
 const Glass = () => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(0);
-  const items = useSelector((state) => state.item.item);
+  const items = useSelector((state) => state.item.item_glasses);
   const is_loaded = useSelector((state) => state.item.is_loaded);
   const [differentView, setDifferentView] = useState(true);
   const [filter, setFilter] = useState(false);

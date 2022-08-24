@@ -38,4 +38,3 @@ const service = createSlice({
 
 export const {  } = service.actions;
 export default service.reducer;
-
