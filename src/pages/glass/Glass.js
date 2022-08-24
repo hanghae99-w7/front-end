@@ -2,7 +2,7 @@ import Card from '../../components/card/Card';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import Categori from '../../components/categoriBox/Categori';
-import item, { getItemThunk, sortItemThunk } from '../../redux/modules/item';
+import { getItemThunk } from '../../redux/modules/item';
 import { BsFilter, BsFillGrid3X3GapFill } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
@@ -54,7 +54,6 @@ const Glass = () => {
 
   const filterOnOff = () => {
     setFilter(!filter);
-    
   };
 
   const newProduct = () => {
@@ -67,7 +66,6 @@ const Glass = () => {
 
   const lowPrice = () => {
     setFilter(!filter);
-
   };
 
   return (
