@@ -95,6 +95,8 @@ const SignUp = () => {
     name,
     birth: `${year}-${month}-${date}`,
     country,
+    admin: false,
+    adminToken: '',
   };
 
   useEffect(() => {
