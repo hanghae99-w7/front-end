@@ -6,10 +6,15 @@ import { api } from '../../shared/api';
 export const getItemThunk = createAsyncThunk(
   'item/getItem',
   async (payload, thunkAPI) => {
-    const resData = await api.get(
-      `/api/iteminfo?page=${payload.page}&size=14&orderby=${payload.orderby}&category=${payload.category}`
-    ).then((res) => res.data);
-    return thunkAPI.fulfillWithValue(resData.data);
+    const resData = await api
+      .get(
+        `/api/iteminfo?page=${payload.page}&size=14&orderby=${payload.orderby}&category=${payload.category}`
+      )
+      .then((res) => res.data);
+    return thunkAPI.fulfillWithValue({
+      data: resData.data,
+      category: payload.category,
+    });
   }
 );
 
@@ -25,7 +30,8 @@ export const getSingleItemThunk = createAsyncThunk(
 
 const initialState = {
   is_loaded: false,
-  item: [],
+  item_glasses: [],
+  item_sunglasses: [],
   detail_is_loaded: false,
   item_single: [],
 };
@@ -36,8 +42,16 @@ export const itemSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getItemThunk.fulfilled, (state, action) => {
-      state.is_loaded = true;
-      state.item = [...state.item, ...action.payload];
+      if (action.payload.category === 'glasses') {
+        state.is_loaded = true;
+        state.item_glasses = [...state.item_glasses, ...action.payload.data];
+      } else {
+        state.is_loaded = true;
+        state.item_sunglasses = [
+          ...state.item_sunglasses,
+          ...action.payload.data,
+        ];
+      }
     });
     builder.addCase(getSingleItemThunk.fulfilled, (state, action) => {
       state.detail_is_loaded = true;
