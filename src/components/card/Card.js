@@ -13,7 +13,6 @@ import {
 
 const Card = ({ id, price, name, imgUrl, cardView }) => {
   const navigate = useNavigate();
-  console.log(cardView)
 
   return (
     <Fragment>

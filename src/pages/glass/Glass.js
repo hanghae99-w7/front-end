@@ -14,6 +14,8 @@ import {
   ContentTopTitle,
   ContentTopIconsbox,
   ContentTopIconsbox2,
+  FilterBox,
+  FilterList
 } from './Glass.styled';
 import { Fragment, useEffect } from 'react';
 
@@ -23,6 +25,7 @@ const Glass = () => {
   const items = useSelector((state) => state.item.item_glasses);
   const is_loaded = useSelector((state) => state.item.is_loaded);
   const [differentView, setDifferentView] = useState(true);
+  const [filter, setFilter] = useState(false);
 
   const handleScroll = () => {
     const scrollHeight = document.documentElement.scrollHeight;
@@ -48,7 +51,10 @@ const Glass = () => {
   const viewChange = () => {
     setDifferentView(!differentView);
   };
-  console.log(differentView);
+
+  const filterOnOff = () => {
+    setFilter(!filter);
+  };
 
   return (
     <>
@@ -58,18 +64,24 @@ const Glass = () => {
       </CategoriListFullbox>
       <ContentTop>
         <ContentTopTitle>안경 / 전체보기</ContentTopTitle>
-        <ContentTopIconsbox>
+        <ContentTopIconsbox onClick={viewChange}>
           <BsFillGrid3X3GapFill
             style={{ fontSize: '17px' }}
-            onClick={viewChange}
           />{' '}
           간략보기
         </ContentTopIconsbox>
         &nbsp;
-        <ContentTopIconsbox2>
-          <BsFilter style={{ fontSize: '18px' }} /> 필터
+        <ContentTopIconsbox2 onClick={filterOnOff}>
+          <BsFilter style={{ fontSize: '18px' }}  /> 필터
         </ContentTopIconsbox2>
       </ContentTop>
+      {filter===true?(
+      <FilterBox>
+        <FilterList>신상품 순</FilterList>
+        <FilterList>높은 가격순</FilterList>
+        <FilterList>낮은 가격순</FilterList>
+      </FilterBox>
+      ):(<FilterBox style={{display:'none'}}/>)}
       <GlassFull>
         {is_loaded ? (
           <Fragment>
