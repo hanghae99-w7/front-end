@@ -256,6 +256,7 @@ const Header = () => {
               </HeaderBoxLargeRight>
             </HeaderBoxLargeInner>
           </HeaderBoxLargeContainer>
+          <AsideBackground ref={asideBackRef} />
         </HeaderBoxLarge>
       )}
       <HeaderBasket ref={asideBasketRef}>
