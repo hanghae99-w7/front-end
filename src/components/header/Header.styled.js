@@ -292,6 +292,7 @@ export const HeaderBasketCartGroup = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  gap: 5px;
 `;
 export const HeaderBasketTotalGroup = styled.div`
   box-sizing: border-box;

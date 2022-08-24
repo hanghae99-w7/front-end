@@ -65,13 +65,14 @@ import {
   HeaderBasketButtonGroup,
 } from './Header.styled';
 import { theme } from '../../shared/theme';
-import { SignInSignUpNotice } from '../../pages/signin/SignIn';
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const is_login = useSelector((state) => state.user.is_login);
+  const baskets = useSelector((state) => state.basket.basket);
+  const basket_is_loaded = useSelector((state) => state.basket.is_loaded);
 
   const asideBarRef = useRef();
   const asideBackRef = useRef();
@@ -267,7 +268,21 @@ const Header = () => {
           <HeaderBasketTitle>쇼핑백</HeaderBasketTitle>
           <HeaderBasketForm>
             <HeaderBasketCartGroup>
-              <Basket></Basket>
+              {basket_is_loaded ? 
+                (baskets.map((basket) => {
+                  return (
+                    <Basket
+                      key={basket.id}
+                      id={basket.id}
+                      imgUrl={basket.imgUrl}
+                      price={basket.price}
+                      name={basket.name}
+                    />
+                  );
+                }
+              )) : (
+                <div></div>
+              )}
             </HeaderBasketCartGroup>
           </HeaderBasketForm>
           <HeaderBasketTotalGroup>
