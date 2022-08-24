@@ -7,12 +7,12 @@ import {
   BasketBoxPrice,
 } from './Basket.styled';
 
-const Basket = () => {
+const Basket = ({ id, name, price, imgUrl }) => {
   return (
     <BasketBox>
-      <BasketBoxImg src={Package} />
-      <BasketBoxTitle>루토 01(K)</BasketBoxTitle>
-      <BasketBoxPrice>269,999원</BasketBoxPrice>
+      <BasketBoxImg src={imgUrl} />
+      <BasketBoxTitle>{name}</BasketBoxTitle>
+      <BasketBoxPrice>{price}원</BasketBoxPrice>
     </BasketBox>
   );
 };
