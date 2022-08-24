@@ -4,6 +4,7 @@ import { useState, useRef, Fragment, useEffect } from 'react';
 // Redux
 import { useSelector, useDispatch } from 'react-redux';
 import { getSingleItemThunk } from '../../redux/modules/item';
+import { postbasketThunk, addSelectBasket } from '../../redux/modules/basket';
 
 // Packages
 import { useParams } from 'react-router-dom';
@@ -122,6 +123,16 @@ const Detail = () => {
     }
   };
 
+  const addBasket = () => {
+    console.log('test');
+    dispatch(postbasketThunk(id)).then((res) => {
+      if (res.payload) {
+        dispatch(addSelectBasket({ id: item_single.id, price: item_single.price, name: item_single.productName, imgUrl: item_single.imgUrl }));
+        alert('장바구니에 추가되었습니다');
+      }
+    });
+  };
+
   useEffect(() => {
     dispatch(getSingleItemThunk(id));
   }, []);
@@ -146,17 +157,18 @@ const Detail = () => {
               </DetailTextPrice>
             </DetailTextTitlePrice>
             <DetailTextContent>
-              {detail_is_loaded ? item_single.productName : 'GENTLE MONSTER'}는 사각형태의
-              블랙 아세테이트 프레임입니다. 엔드피스의 커팅 라인과 과감한 곡선이
-              사용된 웰링턴형 프레임의 키홀 브릿지가 매력적인 제품입니다. 템플은
-              블랙과 클리어가 결합된 이중 아세테이트 시트를 사용하였습니다.
-              엔드피스의 원형 장식과 템플의 라이닝 디테일 메탈 장식이 특징이며
-              99.9% UV 차단이 되는 그린 렌즈를 사용하였습니다.
+              {detail_is_loaded ? item_single.productName : 'GENTLE MONSTER'}는
+              사각형태의 블랙 아세테이트 프레임입니다. 엔드피스의 커팅 라인과
+              과감한 곡선이 사용된 웰링턴형 프레임의 키홀 브릿지가 매력적인
+              제품입니다. 템플은 블랙과 클리어가 결합된 이중 아세테이트 시트를
+              사용하였습니다. 엔드피스의 원형 장식과 템플의 라이닝 디테일 메탈
+              장식이 특징이며 99.9% UV 차단이 되는 그린 렌즈를 사용하였습니다.
             </DetailTextContent>
             <DetailButtonGroup>
               <Button
                 type={'button'}
                 text={'쇼핑백에 추가'}
+                _onClick={addBasket}
                 style={{
                   width: '100%',
                   height: '54px',
@@ -171,15 +183,13 @@ const Detail = () => {
               <DetailServiceInfoA>무이자 할부 서비스</DetailServiceInfoA>
             </DetailServiceInfo>
             <DetailInfo>
-              <DetailInfoBoxTop>
-                <DetailInfoBoxText onClick={() => changeStatus('one')}>
-                  제품 세부 정보
-                </DetailInfoBoxText>
+              <DetailInfoBoxTop onClick={() => changeStatus('one')}>
+                <DetailInfoBoxText>제품 세부 정보</DetailInfoBoxText>
                 <DetailInfoBoxIcon>
                   {one ? (
-                    <IoIosArrowUp className="icon"></IoIosArrowUp>
-                  ) : (
                     <IoIosArrowDown className="icon"></IoIosArrowDown>
+                  ) : (
+                    <IoIosArrowUp className="icon"></IoIosArrowUp>
                   )}
                 </DetailInfoBoxIcon>
               </DetailInfoBoxTop>
@@ -207,15 +217,13 @@ const Detail = () => {
                   <br />
                 </DetailInfoBoxContent>
               </DetailInfoBoxContentBox>
-              <DetailInfoBoxTop>
-                <DetailInfoBoxText onClick={() => changeStatus('two')}>
-                  무료 선물 포장 서비스
-                </DetailInfoBoxText>
+              <DetailInfoBoxTop onClick={() => changeStatus('two')}>
+                <DetailInfoBoxText>무료 선물 포장 서비스</DetailInfoBoxText>
                 <DetailInfoBoxIcon>
                   {two ? (
-                    <IoIosArrowUp className="icon"></IoIosArrowUp>
-                  ) : (
                     <IoIosArrowDown className="icon"></IoIosArrowDown>
+                  ) : (
+                    <IoIosArrowUp className="icon"></IoIosArrowUp>
                   )}
                 </DetailInfoBoxIcon>
               </DetailInfoBoxTop>
@@ -228,15 +236,13 @@ const Detail = () => {
                   <DetailInfoBoxContentImg src={Package} />
                 </DetailInfoBoxContent>
               </DetailInfoBoxContentBox>
-              <DetailInfoBoxTop>
-                <DetailInfoBoxText onClick={() => changeStatus('three')}>
-                  기본 피팅 서비스
-                </DetailInfoBoxText>
+              <DetailInfoBoxTop onClick={() => changeStatus('three')}>
+                <DetailInfoBoxText>기본 피팅 서비스</DetailInfoBoxText>
                 <DetailInfoBoxIcon>
                   {three ? (
-                    <IoIosArrowUp className="icon"></IoIosArrowUp>
-                  ) : (
                     <IoIosArrowDown className="icon"></IoIosArrowDown>
+                  ) : (
+                    <IoIosArrowUp className="icon"></IoIosArrowUp>
                   )}
                 </DetailInfoBoxIcon>
               </DetailInfoBoxTop>
@@ -249,15 +255,13 @@ const Detail = () => {
                   <DetailServiceInfoA>자세히보기</DetailServiceInfoA>
                 </DetailInfoBoxContent>
               </DetailInfoBoxContentBox>
-              <DetailInfoBoxTop>
-                <DetailInfoBoxText onClick={() => changeStatus('four')}>
-                  배송 & 반품
-                </DetailInfoBoxText>
+              <DetailInfoBoxTop onClick={() => changeStatus('four')}>
+                <DetailInfoBoxText>배송 & 반품</DetailInfoBoxText>
                 <DetailInfoBoxIcon>
                   {four ? (
-                    <IoIosArrowUp className="icon"></IoIosArrowUp>
-                  ) : (
                     <IoIosArrowDown className="icon"></IoIosArrowDown>
+                  ) : (
+                    <IoIosArrowUp className="icon"></IoIosArrowUp>
                   )}
                 </DetailInfoBoxIcon>
               </DetailInfoBoxTop>
@@ -275,15 +279,13 @@ const Detail = () => {
                   상태를 유지해야 하며, 모든 구성품을 포함하고 있어야 합니다.
                 </DetailInfoBoxContent>
               </DetailInfoBoxContentBox>
-              <DetailInfoBoxTop>
-                <DetailInfoBoxText onClick={() => changeStatus('five')}>
-                  도움이 필요하신가요?
-                </DetailInfoBoxText>
+              <DetailInfoBoxTop onClick={() => changeStatus('five')}>
+                <DetailInfoBoxText>도움이 필요하신가요?</DetailInfoBoxText>
                 <DetailInfoBoxIcon>
                   {five ? (
-                    <IoIosArrowUp className="icon"></IoIosArrowUp>
-                  ) : (
                     <IoIosArrowDown className="icon"></IoIosArrowDown>
+                  ) : (
+                    <IoIosArrowUp className="icon"></IoIosArrowUp>
                   )}
                 </DetailInfoBoxIcon>
               </DetailInfoBoxTop>

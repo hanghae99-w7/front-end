@@ -29,6 +29,7 @@ const Card = ({ id, price, name, imgUrl, cardView }) => {
     dispatch(postbasketThunk(id)).then((res) => {
       if (res.payload) {
         dispatch(addSelectBasket({ id, price, name, imgUrl }));
+        alert('장바구니에 추가되었습니다');
       }
     });
   };
