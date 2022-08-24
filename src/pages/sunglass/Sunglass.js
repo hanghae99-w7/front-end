@@ -1,7 +1,7 @@
 import Card from '../../components/card/Card';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
-import Categori from '../../components/categoriBox/Categori';
+import { SunglassCategori2 } from '../../components/categoriBox/Categori';
 import { getItemThunk } from '../../redux/modules/item';
 import { BsFilter, BsFillGrid3X3GapFill } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
@@ -14,14 +14,21 @@ import {
   ContentTopTitle,
   ContentTopIconsbox,
   ContentTopIconsbox2,
+  FilterBoxSunglass,
+  FilterList
 } from './Sunglass.styled';
 import { Fragment, useEffect } from 'react';
+
 
 const Glass = () => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(0);
   const items = useSelector((state) => state.item.item);
+  console.log(items)
   const is_loaded = useSelector((state) => state.item.is_loaded);
+  const [differentView, setDifferentView] = useState(true);
+  const [filter, setFilter] = useState(false);
+
 
   const handleScroll = () => {
     const scrollHeight = document.documentElement.scrollHeight;
@@ -44,22 +51,39 @@ const Glass = () => {
     dispatch(getItemThunk({ page, orderby: 'id', category: 'sunglasses' }));
   }, [page]);
 
+  const viewChange = () => {
+    setDifferentView(!differentView);
+  };
+
+  const filterOnOff = () => {
+    setFilter(!filter);
+  };
+
+  
+
   return (
     <>
       <Header />
       <CategoriListFullbox>
-        <Categori></Categori>
+        <SunglassCategori2/>
       </CategoriListFullbox>
       <ContentTop>
-        <ContentTopTitle>안경 / 전체보기</ContentTopTitle>
-        <ContentTopIconsbox>
+        <ContentTopTitle>선글라스 / 전체보기</ContentTopTitle>
+        <ContentTopIconsbox onClick={viewChange}>
           <BsFillGrid3X3GapFill style={{ fontSize: '17px' }} /> 간략보기
         </ContentTopIconsbox>
         &nbsp;
-        <ContentTopIconsbox2>
+        <ContentTopIconsbox2 onClick={filterOnOff}>
           <BsFilter style={{ fontSize: '18px' }} /> 필터
         </ContentTopIconsbox2>
       </ContentTop>
+      {filter===true?(
+      <FilterBoxSunglass>
+        <FilterList>신상품 순</FilterList>
+        <FilterList>높은 가격순</FilterList>
+        <FilterList>낮은 가격순</FilterList>
+      </FilterBoxSunglass>
+      ):(<FilterBoxSunglass style={{display:'none'}}/>)}
       <GlassFull>
         {is_loaded ? (
           <Fragment>
@@ -72,6 +96,7 @@ const Glass = () => {
                   price={item.price}
                   name={item.productName}
                   imgUrl={item.imgUrl}
+                  cardView={differentView}
                 />
               );
             })}

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -39,5 +38,4 @@ const service = createSlice({
 
 export const {  } = service.actions;
 export default service.reducer;
-=======
->>>>>>> master
+
