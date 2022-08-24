@@ -62,3 +62,27 @@ margin-right: 10px;
 }
 ;
 `
+
+export const FilterBoxSunglass = styled.div`
+width: 300px;
+height: 200px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+position: absolute;
+background-color: white;
+z-index: 999;
+gap: 20px ;
+font-family: AppleSDGothicNeoM;
+font-weight: 600;
+right: 1.4%;
+border: 3px solid black;
+`
+
+export const FilterList = styled.div`
+&:hover{
+  cursor: pointer;
+}
+;
+`
