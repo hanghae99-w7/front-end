@@ -32,7 +32,6 @@ const Glass = () => {
     const scrollTop = document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
     if (scrollTop + clientHeight >= scrollHeight) {
-      console.log('페이지 끝에 스크롤이 닿았음');
       setPage((page) => page + 1);
     }
   };

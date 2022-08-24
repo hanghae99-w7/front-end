@@ -2,7 +2,7 @@ import Card from '../../components/card/Card';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import Categori from '../../components/categoriBox/Categori';
-import  { getItemThunk } from '../../redux/modules/item';
+import { getItemThunk } from '../../redux/modules/item';
 import { BsFilter, BsFillGrid3X3GapFill } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
@@ -32,7 +32,6 @@ const Glass = () => {
     const scrollTop = document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
     if (scrollTop + clientHeight >= scrollHeight) {
-      console.log('페이지 끝에 스크롤이 닿았음');
       setPage((page) => page + 1);
     }
   };
