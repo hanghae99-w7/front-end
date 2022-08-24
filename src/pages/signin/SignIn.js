@@ -56,7 +56,13 @@ const SignIn = () => {
         alert('이메일 형식에 맞지 않습니다');
       } else {
         dispatch(signUserThunk({ email, password })).then((res) => {
-          navigate('/');
+          if (res.payload) {
+            navigate('/');
+          } else {
+            alert(
+              '로그인 실패하였습니다\n이메일 / 패스워드를 다시 확인해주세요'
+            );
+          }
         });
       }
     },
