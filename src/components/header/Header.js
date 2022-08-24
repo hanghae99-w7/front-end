@@ -1,11 +1,11 @@
-// Import react
+// React
 import { useState, useEffect, Fragment, useRef } from 'react';
 
-// Import redux
+// Redux
 import { useDispatch, useSelector } from 'react-redux';
 import { headerAction } from '../../redux/modules/user';
 
-// Import packages
+// Packages
 import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { AiOutlineMenu } from 'react-icons/ai';
@@ -13,7 +13,7 @@ import { BiLockAlt } from 'react-icons/bi';
 import { BsXLg } from 'react-icons/bs';
 import jwt_decode from 'jwt-decode';
 
-// Import components & elements
+// Components & Elements
 import Button from '../../elements/button/Button';
 import Basket from '../../components/basket/Basket';
 
@@ -267,7 +267,6 @@ const Header = () => {
           <HeaderBasketTitle>쇼핑백</HeaderBasketTitle>
           <HeaderBasketForm>
             <HeaderBasketCartGroup>
-              쇼핑백에 담긴 제품이 없습니다.
               <Basket></Basket>
             </HeaderBasketCartGroup>
           </HeaderBasketForm>

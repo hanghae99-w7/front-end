@@ -2,7 +2,7 @@ import Card from '../../components/card/Card';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import { SunglassCategori2 } from '../../components/categoriBox/Categori';
-import { getItemThunk } from '../../redux/modules/item';
+import { getItemThunk, clearSunglassItem } from '../../redux/modules/item';
 import { BsFilter, BsFillGrid3X3GapFill } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
@@ -22,6 +22,7 @@ import { Fragment, useEffect } from 'react';
 const Glass = () => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(0);
+  const [orderby,setOrderby] = useState('id');
   const items = useSelector((state) => state.item.item_sunglasses);
   const is_loaded = useSelector((state) => state.item.is_loaded);
   const [differentView, setDifferentView] = useState(true);
@@ -32,7 +33,6 @@ const Glass = () => {
     const scrollTop = document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
     if (scrollTop + clientHeight >= scrollHeight) {
-      console.log('페이지 끝에 스크롤이 닿았음');
       setPage((page) => page + 1);
     }
   };
@@ -45,8 +45,9 @@ const Glass = () => {
   }, []);
 
   useEffect(() => {
-    dispatch(getItemThunk({ page, orderby: 'id', category: 'sunglasses' }));
-  }, [page]);
+    console.log('change page');
+    dispatch(getItemThunk({ page, orderby: orderby, category: 'sunglasses' }));
+  }, [page, orderby]);
 
   const viewChange = () => {
     setDifferentView(!differentView);
@@ -58,14 +59,23 @@ const Glass = () => {
 
   const newProduct = () => {
     setFilter(!filter);
+    dispatch(clearSunglassItem());
+    setPage(0);
+    setOrderby('id');
   };
 
   const highPrice = () => {
     setFilter(!filter);
+    dispatch(clearSunglassItem());
+    setPage(0);
+    setOrderby('priceup');
   };
 
   const lowPrice = () => {
     setFilter(!filter);
+    dispatch(clearSunglassItem());
+    setPage(0);
+    setOrderby('pricedown');
   };
 
   return (

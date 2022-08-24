@@ -9,7 +9,6 @@ export const getServiceThunk = createAsyncThunk(
     const resData = await api
       .get('/api/servicecenter')
       .then((res) => res.data.data);
-    console.log(resData);
     return thunkAPI.fulfillWithValue(resData);
   }
 );
@@ -17,15 +16,15 @@ export const getServiceThunk = createAsyncThunk(
 export const postServiceThunk = createAsyncThunk(
   'service/postServiceList',
   async (payload, thunkAPI) => {
-    const headers = {
-      authorization: `Bearer ${window.sessionStorage.getItem('authorization')}`,
-      'refresh-token': `${window.sessionStorage.getItem('refresh-token')}`,
-    };
+    // const headers = {
+    //   authorization: `Bearer ${window.sessionStorage.getItem('authorization')}`,
+    //   'refresh-token': `${window.sessionStorage.getItem('refresh-token')}`,
+    // };
+    console.log(payload);
     const resData = await api_auth
-      .post('/api/servicecenter', payload, {
-        headers,
-      })
+      .post('/api/servicecenter', payload)
       .then((res) => res.data.data);
+    console.log(resData);
     return thunkAPI.fulfillWithValue(resData);
   }
 );

@@ -2,7 +2,7 @@ import Card from '../../components/card/Card';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import Categori from '../../components/categoriBox/Categori';
-import  { getItemThunk } from '../../redux/modules/item';
+import { getItemThunk, clearGlassItem } from '../../redux/modules/item';
 import { BsFilter, BsFillGrid3X3GapFill } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
@@ -21,6 +21,7 @@ import { Fragment, useEffect } from 'react';
 
 const Glass = () => {
   const dispatch = useDispatch();
+  const [orderby,setOrderby] = useState('id');
   const [page, setPage] = useState(0);
   const items = useSelector((state) => state.item.item_glasses);
   const is_loaded = useSelector((state) => state.item.is_loaded);
@@ -32,7 +33,6 @@ const Glass = () => {
     const scrollTop = document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
     if (scrollTop + clientHeight >= scrollHeight) {
-      console.log('페이지 끝에 스크롤이 닿았음');
       setPage((page) => page + 1);
     }
   };
@@ -45,8 +45,8 @@ const Glass = () => {
   }, []);
 
   useEffect(() => {
-    dispatch(getItemThunk({ page, orderby: 'id', category: 'glasses' }));
-  }, [page]);
+    dispatch(getItemThunk({ page, orderby: orderby, category: 'glasses' }));
+  }, [page, orderby]);
 
   const viewChange = () => {
     setDifferentView(!differentView);
@@ -58,14 +58,23 @@ const Glass = () => {
 
   const newProduct = () => {
     setFilter(!filter);
+    dispatch(clearGlassItem());
+    setPage(0);
+    setOrderby('id');
   };
 
   const highPrice = () => {
     setFilter(!filter);
+    dispatch(clearGlassItem());
+    setPage(0);
+    setOrderby('priceup');
   };
 
   const lowPrice = () => {
     setFilter(!filter);
+    dispatch(clearGlassItem());
+    setPage(0);
+    setOrderby('pricedown');
   };
 
   return (
@@ -100,7 +109,7 @@ const Glass = () => {
             {items.map((item) => {
               return (
                 <Card
-                  key={item.imteId}
+                  key={item.itemId}
                   id={item.itemId}
                   price={item.price}
                   name={item.productName}

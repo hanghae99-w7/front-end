@@ -6,6 +6,7 @@ import { api } from '../../shared/api';
 export const getItemThunk = createAsyncThunk(
   'item/getItem',
   async (payload, thunkAPI) => {
+    console.log(payload);
     const resData = await api
       .get(
         `/api/iteminfo?page=${payload.page}&size=14&orderby=${payload.orderby}&category=${payload.category}`
@@ -28,7 +29,6 @@ export const getSingleItemThunk = createAsyncThunk(
   }
 );
 
-
 const initialState = {
   is_loaded: false,
   item_glasses: [],
@@ -40,7 +40,14 @@ const initialState = {
 export const itemSlice = createSlice({
   name: 'item',
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    clearSunglassItem: (state, action) => {
+      state.item_sunglasses = [];
+    },
+    clearGlassItem: (state, action) => {
+      state.item_glasses = [];
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getItemThunk.fulfilled, (state, action) => {
       if (action.payload.category === 'glasses') {
@@ -58,9 +65,8 @@ export const itemSlice = createSlice({
       state.detail_is_loaded = true;
       state.item_single = action.payload;
     });
-
-
   },
 });
 
+export const { clearSunglassItem, clearGlassItem } = itemSlice.actions;
 export default itemSlice.reducer;
