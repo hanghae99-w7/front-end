@@ -291,6 +291,7 @@ export const HeaderBasketForm = styled.form`
 export const HeaderBasketCartGroup = styled.div`
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
 `;
 export const HeaderBasketTotalGroup = styled.div`
   box-sizing: border-box;
