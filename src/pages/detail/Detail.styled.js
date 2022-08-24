@@ -93,11 +93,6 @@ export const DetailInfoBoxIcon = styled.div`
   position: absolute;
   top: 24px;
   right: 14px;
-  .icon {
-    &:hover {
-      cursor: pointer;
-    }
-  }
 `;
 export const DetailInfoBoxContentBox = styled.div`
   display: none;
