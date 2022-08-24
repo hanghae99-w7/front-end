@@ -2,7 +2,7 @@ import Card from '../../components/card/Card';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import Categori from '../../components/categoriBox/Categori';
-import { getItemThunk } from '../../redux/modules/item';
+import item, { getItemThunk, sortItemThunk } from '../../redux/modules/item';
 import { BsFilter, BsFillGrid3X3GapFill } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
@@ -15,7 +15,7 @@ import {
   ContentTopIconsbox,
   ContentTopIconsbox2,
   FilterBox,
-  FilterList
+  FilterList,
 } from './Glass.styled';
 import { Fragment, useEffect } from 'react';
 
@@ -54,6 +54,20 @@ const Glass = () => {
 
   const filterOnOff = () => {
     setFilter(!filter);
+    
+  };
+
+  const newProduct = () => {
+    setFilter(!filter);
+  };
+
+  const highPrice = () => {
+    setFilter(!filter);
+  };
+
+  const lowPrice = () => {
+    setFilter(!filter);
+
   };
 
   return (
@@ -65,23 +79,23 @@ const Glass = () => {
       <ContentTop>
         <ContentTopTitle>안경 / 전체보기</ContentTopTitle>
         <ContentTopIconsbox onClick={viewChange}>
-          <BsFillGrid3X3GapFill
-            style={{ fontSize: '17px' }}
-          />{' '}
+          <BsFillGrid3X3GapFill style={{ fontSize: '17px' }} />
           간략보기
         </ContentTopIconsbox>
         &nbsp;
         <ContentTopIconsbox2 onClick={filterOnOff}>
-          <BsFilter style={{ fontSize: '18px' }}  /> 필터
+          <BsFilter style={{ fontSize: '18px' }} /> 필터
         </ContentTopIconsbox2>
       </ContentTop>
-      {filter===true?(
-      <FilterBox>
-        <FilterList>신상품 순</FilterList>
-        <FilterList>높은 가격순</FilterList>
-        <FilterList>낮은 가격순</FilterList>
-      </FilterBox>
-      ):(<FilterBox style={{display:'none'}}/>)}
+      {filter === true ? (
+        <FilterBox>
+          <FilterList onClick={newProduct}>신상품 순</FilterList>
+          <FilterList onClick={highPrice}>높은 가격순</FilterList>
+          <FilterList onClick={lowPrice}>낮은 가격순</FilterList>
+        </FilterBox>
+      ) : (
+        <FilterBox style={{ display: 'none' }} />
+      )}
       <GlassFull>
         {is_loaded ? (
           <Fragment>
@@ -99,7 +113,7 @@ const Glass = () => {
             })}
           </Fragment>
         ) : (
-          <CardSkeleton  />
+          <CardSkeleton />
         )}
       </GlassFull>
       <Footer />
