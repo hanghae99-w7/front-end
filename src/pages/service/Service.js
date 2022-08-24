@@ -34,6 +34,11 @@ import {
 const Service = () => {
 	const dispatch = useDispatch();
 
+	// [4] useSelector 책장에서 책을 꺼내서 펼쳐줄 준비를 한다!!!
+	//get통신 // 그 전 state까지는 걍 외워 2번째에는 책장!(configStore)에서 필요한거 넣기.(Slice 까지는 접근한거임)
+	//올려놓기 까진 한거임. 이제 myServiceList를 뿌려줘야함. 아래 return에서 map 써서 뿌려주면 끝
+	const myServiceList = useSelector((state) => state.service.serviceList);
+
 	const [service, setService] = useState(false);
 	const [law, setLaw] = useState(false);
 	// const [social, setSocial] = useState(false);
@@ -49,11 +54,18 @@ const Service = () => {
 	const lawRef = useRef();
 	// const socialRef = useRef();
 
+	// [3] useEffect는 렌더링 되고나서 바로 실행시켜주는 훅임. 렌더링 된 다음 이루어짐
 	//modules.service에 있는 getServiceList함수를 실행시킴
 	useEffect(() => {
-		dispatch(getServiceList())
-	}, [])
-	
+		//dispatch는 리덕스 안에 있는 함수를 불러와줌 getS는 우리가 만든 리덕스 안의 함수 이름
+		//추후에 post patch get 같은걸 할 때 () 안에 값을 넣어주게됨.
+		//module에 있는 22번째 payload 값이 됨.
+
+		//payload [1] 여기서 시작함 . 보낼 데이터를 다 넣어준 다음에 payload로 전송해주기.
+		//지금은 Get이라 이것밖에 없지만 post는 또 다른 데이터가 들어감.
+		dispatch(getServiceList({ title, content }));
+	}, []);
+
 
 	const hideService = () => {
 		if (service) {
@@ -85,9 +97,7 @@ const Service = () => {
 	// 	}
 	// };
 
-	const onClickHandler = () => {
-
-	};
+	const onClickHandler = () => {};
 
 	return (
 		<div>
