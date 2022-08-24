@@ -6,7 +6,6 @@ import { api } from '../../shared/api';
 export const getItemThunk = createAsyncThunk(
   'item/getItem',
   async (payload, thunkAPI) => {
-    console.log(payload);
     const resData = await api
       .get(
         `/api/iteminfo?page=${payload.page}&size=14&orderby=${payload.orderby}&category=${payload.category}`
