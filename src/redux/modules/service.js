@@ -21,7 +21,7 @@ export const postServiceThunk = createAsyncThunk(
       authorization: `Bearer ${window.sessionStorage.getItem('authorization')}`,
       'refresh-token': `${window.sessionStorage.getItem('refresh-token')}`,
     };
-    const resData = await api
+    const resData = await api_auth
       .post('/api/servicecenter', payload, {
         headers,
       })
@@ -34,24 +34,7 @@ const initialState = {
   serviceList: [],
 };
 
-
-//기본적인 thunk 틀 : url이 써진 곳이랑 통신을 하겠다는 뜻.
-//url 앞 get은 method임
-export const getServiceList = createAsyncThunk(
-  "getServiceList",
-  async (payload,thunkAPI) => {
-    try {
-      const response = await axios.get("http://3.39.23.19:8080/servicecenter");
-      return console.log(response)
-      // return thunkAPI.fulfillWithValue(response)
-    }
-    catch(e){
-      return thunkAPI.rejectWithValue(e)
-    }
-  }
-)
-
-//책장 /slice를 모은게 store 
+//책장 /slice를 모은게 store
 const service = createSlice({
   name: 'service',
   initialState,
