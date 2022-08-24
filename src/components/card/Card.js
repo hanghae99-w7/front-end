@@ -1,6 +1,10 @@
-import { Fragment, memo } from 'react';
+// React
+import { Fragment,memo } from 'react';
+
+// Package
 import { useNavigate } from 'react-router-dom';
 
+// Style
 import {
   CardBox,
   CardImg,
@@ -24,7 +28,7 @@ const Card = ({ id, price, name, imgUrl, cardView }) => {
             <br />
             <CardItemPrice>{price}</CardItemPrice>
             <svg
-              stroke-width="0"
+              strokeWidth="0"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >

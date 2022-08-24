@@ -1,3 +1,4 @@
+// Style
 import { StyledInput } from './Input.styled';
 
 const Input = ({ type, value, _onChange, _minLength, _maxLength, _ref, style }) => {
