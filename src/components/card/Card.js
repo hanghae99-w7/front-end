@@ -39,8 +39,7 @@ const Card = ({ id, price, name, imgUrl, cardView }) => {
       ) : (
         <CardBox2 id={id}>
           <CardImg2 src={imgUrl} onClick={() => navigate(`/detail/${id}`)} />
-          <CardTextBox>
-          </CardTextBox>
+          <CardTextBox></CardTextBox>
         </CardBox2>
       )}
     </Fragment>

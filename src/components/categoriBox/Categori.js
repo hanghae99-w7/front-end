@@ -1,12 +1,12 @@
-import React from "react";
-import { 
+import React from 'react';
+import {
   CategoriListBox,
   CategoriImgTextBox,
   CategoriImg,
-  CategoriText
- } from "./Categori.styled";
+  CategoriText,
+} from './Categori.styled';
 
- import {
+import {
   glassCategori_1,
   glassCategori_2,
   glassCategori_3,
@@ -24,14 +24,12 @@ import {
   sunglass_7,
   sunglass_8,
   sunglass_9,
-  sunglass_10
- }from '../../static/image/image';
+  sunglass_10,
+} from '../../static/image/image';
 
-
- //안경 페이지 카테고리박스
+//안경 페이지 카테고리박스
 const Categori = () => {
-
-  return(
+  return (
     <CategoriListBox>
       <CategoriImgTextBox>
         <CategoriImg src={glassCategori_1}></CategoriImg>
@@ -66,18 +64,14 @@ const Categori = () => {
         <CategoriText>원형 프레임</CategoriText>
       </CategoriImgTextBox>
     </CategoriListBox>
-    
-  )
+  );
 };
 
 export default Categori;
 
-
-
 //선글라스 페이지 카테고리박스
 export const SunglassCategori2 = () => {
-
-  return(
+  return (
     <CategoriListBox>
       <CategoriImgTextBox>
         <CategoriImg src={sunglass_1}></CategoriImg>
@@ -120,7 +114,5 @@ export const SunglassCategori2 = () => {
         <CategoriText>원형 프레임</CategoriText>
       </CategoriImgTextBox>
     </CategoriListBox>
-    
-  )
+  );
 };
-
