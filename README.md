@@ -1,34 +1,3 @@
-
-## ⚙️ 프로젝트 아키텍처
-
-![image](https://user-images.githubusercontent.com/44804024/186624236-804b1101-477c-464b-aa6f-269cbf04eb3e.png)
-
-## 📚 핵심 기능
-
-#### 1. 반응형 레이아웃
-
-- 우선 브레이크 포인트를 데스크탑 퍼스트로 설정했습니다. 브레이크 포인트를 상세
-  하게 지정하지는 않았으며, flex layout과 적절히 조화롭게 사용하여 레이아웃이 무
-  너지는 부분에 브레이크 포인트(max-length: 1023px, max-length: 767px)을 사용해
-  거의 대부분의 데스크탑 브라우저에서는 반응하게 만들었습니다.
-
-#### 2. 무한 스크롤
-
-- useState를 사용하여 비교적 가장 쉬운 방법으로 구현하였습니다. useEffect를 사용
-  하여 page state가 변경 될 때마다 지정해놓은 size 만큼 새로운 데이터를 불러오는
-  axios가 실행됩니다. 또한 page state는 스크롤이 바닥에 닿았을 때 state가 변경되
-  게 로직을 구성하였습니다.
-
-```javascript
-useEffect(() => {
-  dispatch(getItemThunk({ page, orderby: orderby, category: 'sunglasses' }));
-}, [page, orderby]);
-```
-
-
-
-
-=======
 ![GM  Logo](https://user-images.githubusercontent.com/74149915/186643525-1e093aa0-fb3b-4225-85d7-463e980b2916.jpg)
 
 ## 👉🏻 프로젝트 소개 <br>
@@ -55,7 +24,9 @@ useEffect(() => {
 <img src ="https://user-images.githubusercontent.com/107938837/186643110-1cda55c4-6cc4-4f1a-bf35-78ef6dd410c9.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643106-f9a3dd8b-d523-4612-9e68-65ad1d96efa7.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643094-62fe97a4-ab8d-4be2-8ddf-438958663374.gif" width= "300" height="180"/>|
 **소셜로그인**|**문의하기 관리자 계정**|**문의하기 **
 <img src ="https://user-images.githubusercontent.com/107938837/186643067-2cad9a50-a3aa-4285-812d-1922ae69377b.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643097-5c28b52c-fa32-4df1-a6f1-dfc43dc34c26.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643100-2066feb9-8637-4c54-89e8-e9b5a288cbc4.gif" width= "300" height="180"/>| 
+
 ## 🛠 프로젝트 아키텍쳐
+![image](https://user-images.githubusercontent.com/44804024/186624236-804b1101-477c-464b-aa6f-269cbf04eb3e.png)
 <br><br>
 
 ## ⚙️ 기술 스택
@@ -64,6 +35,7 @@ useEffect(() => {
 ![Redux](https://camo.githubusercontent.com/d58ceb12a14709c7049878ae358ef7628e42d4276108b758cbb66a8922e7ef3e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656475782d3736344142433f7374796c653d266c6f676f3d5265647578266c6f676f436f6c6f723d7768697465)
 ![ReactRouter](https://camo.githubusercontent.com/d257f8e18789ba1e6d34a9c63cbe150083c96b6f0da2eb059ae02422914ea80a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f526561637420526f757465722d4341343234353f7374796c653d266c6f676f3d526561637420526f75746572266c6f676f436f6c6f723d7768697465)
 ![Axios](https://camo.githubusercontent.com/809053601ae7a670d58865bd88e0f313cc5ced1c0915ff43aeb2ad1d1bf252c2/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4178696f732d3638323865323f7374796c653d)
+![Swiper](https://camo.githubusercontent.com/2a4027d72d8e0d2938ad47bd8e4274fee26f286e464ce62c492a3dc2ff09b174/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5377697065722d3633333246363f7374796c653d266c6f676f3d537769706572266c6f676f436f6c6f723d7768697465)
 ![styledComponents](https://camo.githubusercontent.com/8d29f15964b1cb2254deccb293a2c444eee52078b3d448b6149c17c5ab40d2ce/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7374796c65642d636f6d706f6e656e74732d4442373039333f7374796c653d266c6f676f3d7374796c65642d636f6d706f6e656e7473266c6f676f436f6c6f723d7768697465)
 ![css](https://camo.githubusercontent.com/c774b3527d1dfaea9ddb6a253fc0bad0b819a570a9da14adf2eb02279ae8f5d7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4353532d3135373242363f7374796c653d266c6f676f3d43535333266c6f676f436f6c6f723d7768697465)
 #### Dev tools
@@ -99,6 +71,28 @@ useEffect(() => {
 <img src="https://user-images.githubusercontent.com/74149915/186645412-13f9fcca-3e86-4b8a-a5bc-03a509664d0f.jpg" width = "300"/>
 
 <br><br>
+## 📚 핵심 기능
+
+#### 1. 반응형 레이아웃
+
+- 우선 브레이크 포인트를 데스크탑 퍼스트로 설정했습니다. 브레이크 포인트를 상세
+  하게 지정하지는 않았으며, flex layout과 적절히 조화롭게 사용하여 레이아웃이 무
+  너지는 부분에 브레이크 포인트(max-length: 1023px, max-length: 767px)을 사용해
+  거의 대부분의 데스크탑 브라우저에서는 반응하게 만들었습니다.
+
+#### 2. 무한 스크롤
+
+- useState를 사용하여 비교적 가장 쉬운 방법으로 구현하였습니다. useEffect를 사용
+  하여 page state가 변경 될 때마다 지정해놓은 size 만큼 새로운 데이터를 불러오는
+  axios가 실행됩니다. 또한 page state는 스크롤이 바닥에 닿았을 때 state가 변경되
+  게 로직을 구성하였습니다.
+
+```javascript
+useEffect(() => {
+  dispatch(getItemThunk({ page, orderby: orderby, category: 'sunglasses' }));
+}, [page, orderby]);
+```
+<br><br>
 
 ## 🤦‍♀️ 트러블 슈팅
 ### 1.정렬하기 기능 구현중 
@@ -122,6 +116,7 @@ useEffect(() => {
           }
         });
 <br><br>
+
 ## ✒️ 새로 적용해본 기술
 
 #### 1. Media query
@@ -145,7 +140,7 @@ useEffect(() => {
   이 있었지만 대부분의 공통 스타일 요소에 ThemeProvider 변수가 들어가도록 노력했
   습니다. 생각한 장점으로는 사이트 내 스타일의 통일감을 주어 사용자가 좀 더 편안
   한 환경에서 사용이 가능할 것 같습니다.
-
+<br><br>
 
 ## 🔎 개선해야할 사항
 
@@ -178,6 +173,11 @@ useEffect(() => {
   똑같이 다음에는 와이어프레임 & API 설계 진행할 때 좀 더 고려를 많이 하겠습니다
   .
 
-
+<br><br>
 ## 🔥 피드백 받은 내용
+✏️파일 디렉토리 : 설계가 잘 되어있어서 수정할 부분 없음 <br><br>
+✏️관리자 기능 : 페이지에서 세션에 있는 토큰 값을 가져와 비교하는 관리자 함수 → 공통적으로 사용할 수 있는 유틸폴더에 만들어주기 <br><br>
+✏️ 스타일 : 반응형에서 height 값은 고정 시키지 않기. 넓이는 유동적으로 늘었다 줄었다 하지만 height 값은 데스크탑이나 아이패드, 모바일 등등 고정되어있는 경우가 많음
+height 대신 line-height로 감싸서 안에 값을 퍼센트로 지정 하고 겉에 하이트를 따로 지정 해주기<br><br>
+✏️ 폰트 패밀리 : global style로 공통적으로 관리해주기 <br><br>
 <br><br>
