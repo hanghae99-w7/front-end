@@ -3,7 +3,8 @@ import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import { SunglassCategori2 } from '../../components/categoriBox/Categori';
 import { getItemThunk, clearSunglassItem } from '../../redux/modules/item';
-import { BsFilter, BsFillGrid3X3GapFill } from 'react-icons/bs';
+import { BiSlider} from 'react-icons/bi';
+import {IoMdApps} from 'react-icons/io';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import CardSkeleton from '../../components/skeleton/CardSkeleton';
@@ -45,7 +46,6 @@ const Glass = () => {
   }, []);
 
   useEffect(() => {
-    console.log('change page');
     dispatch(getItemThunk({ page, orderby: orderby, category: 'sunglasses' }));
   }, [page, orderby]);
 
@@ -102,11 +102,11 @@ const Glass = () => {
       <ContentTop>
         <ContentTopTitle>선글라스 / 전체보기</ContentTopTitle>
         <ContentTopIconsbox onClick={viewChange}>
-          <BsFillGrid3X3GapFill style={{ fontSize: '17px' }} /> 간략보기
+          <IoMdApps style={{ fontSize: '17px' }} /> 간략보기
         </ContentTopIconsbox>
         &nbsp;
         <ContentTopIconsbox2 onClick={filterOnOff}>
-          <BsFilter style={{ fontSize: '18px' }} /> 필터
+          <BiSlider style={{ fontSize: '17px' }} /> 필터
         </ContentTopIconsbox2>
       </ContentTop>
       {filter === true ? (

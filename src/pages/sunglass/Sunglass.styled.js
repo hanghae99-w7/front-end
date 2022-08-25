@@ -28,7 +28,7 @@ align-items : center;
 
 export const ContentTopTitle = styled.div`
 font-size: 16px;
-font-weight: 700;
+font-weight: 900;
 width: 100%;
 height: 22px;
 font-family: 'AppleSDGothicNeoL';

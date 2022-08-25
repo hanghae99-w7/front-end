@@ -28,7 +28,7 @@ export const ContentTop = styled.div`
 
 export const ContentTopTitle = styled.div`
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 900;
   width: 100%;
   height: 22px;
   font-family: 'AppleSDGothicNeoL';
@@ -72,7 +72,6 @@ export const FilterBox = styled.div`
   background-color: white;
   z-index: 999;
   gap: 20px;
-  font-family: AppleSDGothicNeoM;
   font-weight: 600;
   right: 1.4%;
   border: 3px solid black;
