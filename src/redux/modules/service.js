@@ -25,8 +25,9 @@ export const patchAdminCheckThunk = createAsyncThunk(
   'service/patchAdminCheck',
   async (payload, thunkAPI) => {
     const resData = await api_auth
-      .patch(`/api/servicecenter/${payload}`)
+      .patch(`/api/servicecenter/admin/${payload}`)
       .then((res) => res.data.data);
+    console.log(resData);
     return thunkAPI.fulfillWithValue(resData);
   }
 );

@@ -3,7 +3,10 @@ import { useState, useRef } from 'react';
 
 // Redux
 import { useDispatch } from 'react-redux';
-import { deleteServiceThunk } from '../../redux/modules/service';
+import {
+  deleteServiceThunk,
+  patchAdminCheckThunk,
+} from '../../redux/modules/service';
 
 // Packages
 import jwt_decode from 'jwt-decode';
@@ -16,6 +19,7 @@ import {
   ServiceListTitle,
   ServiceListContent,
 } from './Comment.styled';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -31,34 +35,62 @@ const Comment = ({
   const [service, setService] = useState(false);
 
   const serviceRef = useRef();
+  const radioRef = useRef();
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const hideService = () => {
     if (service) {
       serviceRef.current.style.display = 'none';
       setService(false);
     } else {
-      if (
-        window.sessionStorage.getItem('authorization') !== '' ||
-        window.sessionStorage.getItem('authorization') !== undefined ||
-        window.sessionStorage.getItem('authorization') !== null
-      ) {
+      if (window.sessionStorage.length !== 0) {
         const tokenEmail = jwt_decode(
           window.sessionStorage.getItem('authorization')
         ).sub;
-        if (tokenEmail === email) {
+        const auth = jwt_decode(
+          window.sessionStorage.getItem('authorization')
+        ).auth;
+        if (tokenEmail === email || auth === 'ADMIN') {
           serviceRef.current.style.display = 'block';
           setService(true);
         } else {
-          alert('작성자만 열람 가능합니다');
+          alert('작성자 또는 관리자만 열람 가능합니다');
         }
+      } else {
+        alert('로그인이 필요합니다');
+        navigate('/signin');
       }
     }
   };
 
   const onClickHandler = () => {
     dispatch(deleteServiceThunk(id));
+  };
+
+  const adminCheckProved = () => {
+    console.log(window.sessionStorage.length);
+    try {
+      if (window.sessionStorage.length !== 0) {
+        const auth = jwt_decode(
+          window.sessionStorage.getItem('authorization')
+        ).auth;
+        if (auth === 'ADMIN') {
+          dispatch(patchAdminCheckThunk(id));
+          radioRef.current.disabled = true;
+        } else {
+          alert('관리자만 확인 가능합니다');
+          radioRef.current.checked = false;
+        }
+      } else if (window.sessionStorage.length === 0) {
+        radioRef.current.checked = false;
+        alert('관리자 로그인이 필요합니다');
+        navigate('/signin');
+      }
+    } catch (err) {
+      console.err(err);
+    }
   };
 
   return (
@@ -70,9 +102,13 @@ const Comment = ({
           </div>
           <div className="serviceSub">
             {adminChecked ? (
-              <input type="checkbox" />
+              <input type="checkbox" checked disabled />
             ) : (
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                onClick={adminCheckProved}
+                ref={radioRef}
+              />
             )}
             <div className="serviceDate">{createdAt.split('T')[0]}</div>
             <div className="serviceUser">{username}</div>

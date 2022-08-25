@@ -4,6 +4,7 @@ import { useState, useEffect, Fragment, useRef } from 'react';
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
 import { headerAction } from '../../redux/modules/user';
+import { clearBasketAction } from '../../redux/modules/basket';
 
 // Packages
 import { useNavigate } from 'react-router-dom';
@@ -104,7 +105,10 @@ const Header = () => {
   const signOut = () => {
     window.sessionStorage.removeItem('authorization');
     window.sessionStorage.removeItem('refresh-token');
+    dispatch(clearBasketAction());
     dispatch(headerAction({ is_login: false }));
+    alert('로그아웃 되었습니다');
+    navigate('/');
   };
 
   useEffect(() => {
@@ -268,8 +272,8 @@ const Header = () => {
           <HeaderBasketTitle>쇼핑백</HeaderBasketTitle>
           <HeaderBasketForm>
             <HeaderBasketCartGroup>
-              {basket_is_loaded ? 
-                (baskets.map((basket) => {
+              {basket_is_loaded ? (
+                baskets.map((basket) => {
                   return (
                     <Basket
                       key={basket.id}
@@ -279,8 +283,8 @@ const Header = () => {
                       name={basket.name}
                     />
                   );
-                }
-              )) : (
+                })
+              ) : (
                 <div></div>
               )}
             </HeaderBasketCartGroup>

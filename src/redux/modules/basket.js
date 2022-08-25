@@ -26,9 +26,13 @@ export const basketSlice = createSlice({
       state.is_loaded = true;
       state.basket = [...state.basket, action.payload];
     },
+    clearBasketAction: (state, action) => {
+      state.is_loaded = false;
+      state.basket = [];
+    }
   },
   extraReducers: (builder) => {},
 });
 
-export const { addSelectBasket } = basketSlice.actions;
+export const { addSelectBasket, clearBasketAction } = basketSlice.actions;
 export default basketSlice.reducer;

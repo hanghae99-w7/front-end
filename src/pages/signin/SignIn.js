@@ -1,9 +1,9 @@
 // React import
-import { useRef, useState, useCallback, useEffect, Fragment } from 'react';
+import { useState, useCallback, Fragment } from 'react';
 
 // Redux import
 import { useDispatch } from 'react-redux/es/exports';
-import { signUserThunk, signInAction } from '../../redux/modules/user';
+import { signUserThunk } from '../../redux/modules/user';
 
 // Package import
 import { AiFillMessage } from 'react-icons/ai';
