@@ -9,6 +9,7 @@
 <br><br>
 
 ## 👻 프로젝트 참여 멤버
+### Frontend
 성필상 https://github.com/lucy-pill <br>
 나소나 https://github.com/4775614 <br>
 김민석 https://github.com/cordplace <br>
