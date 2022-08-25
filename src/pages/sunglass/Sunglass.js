@@ -6,7 +6,8 @@ import { getItemThunk, clearSunglassItem } from '../../redux/modules/item';
 import { BiSlider} from 'react-icons/bi';
 import {IoMdApps} from 'react-icons/io';
 import { useSelector, useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { throttle } from 'lodash';
+import { useCallback, useState } from 'react';
 import CardSkeleton from '../../components/skeleton/CardSkeleton';
 import {
   GlassFull,

@@ -82,6 +82,7 @@ export const HeaderBoxLargeCountry = styled.div`
   width: auto;
 `;
 export const HeaderBoxLargeSignIn = styled.div`
+  font-family: AppleSDGothicNeoM;
   box-sizing: border-box;
   font-size: 15px;
   margin: 28px 0;
