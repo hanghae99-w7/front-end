@@ -9,11 +9,11 @@ import {
   BasketBoxDelete,
 } from './Basket.styled';
 
-const Basket = ({ id, name, price, imgUrl }) => {
+const Basket = ({ id, basketId, name, price, imgUrl }) => {
   const dispatch = useDispatch();
 
   const deleteBaskte = () => {
-    dispatch(deleteBasketThunk(id));
+    dispatch(deleteBasketThunk(basketId));
   };
 
   return (

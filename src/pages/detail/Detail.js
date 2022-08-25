@@ -127,8 +127,7 @@ const Detail = () => {
   const addBasket = () => {
     if(window.sessionStorage.length !== 0) {
       dispatch(postBasketThunk(id)).then((res) => {
-        if (res.payload) {
-          dispatch(addSelectBasket({ id: item_single.id, price: item_single.price, name: item_single.productName, imgUrl: item_single.imgUrl }));
+        if (res.payload.success) {
           alert('장바구니에 추가되었습니다');
         }
       });

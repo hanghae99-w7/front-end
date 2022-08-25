@@ -1,7 +1,58 @@
 <<<<<<< HEAD
+![GM  Logo](https://user-images.githubusercontent.com/74149915/186643525-1e093aa0-fb3b-4225-85d7-463e980b2916.jpg)
+
+## 👉🏻 프로젝트 소개 <br>
+
+아이웨어(eye wear) 브랜드 GENTLE MONSTER 웹 페이지를 클론 코딩하였습니다.
+<br><br>
+
+## 🗓 프로젝트 기간
+
+2022년 08월 19일 ~ 2022년 8월 25일 (1주) <br><br>
+
+## 프로젝트 참여 멤버
+
+성필상 <br> 나소나 <br> 김민석 <br> <br><br>
+
 ## ⚙️ 프로젝트 아키텍처
 
 ![image](https://user-images.githubusercontent.com/44804024/186624236-804b1101-477c-464b-aa6f-269cbf04eb3e.png)
+
+## ⚙️ 기술 스택
+
+<br><br>
+
+## 📃 API 명세서
+
+<img src="https://user-images.githubusercontent.com/74149915/186645644-6119e10d-81f0-49ab-972e-9be18a92fc03.jpg" width = "500"/>
+
+<br><br>
+
+## 📚 와이어 프레임
+
+### 1.랜딩페이지
+
+<img src="https://user-images.githubusercontent.com/74149915/186643603-8537b115-53ed-4c04-a69f-7fefcd2243de.jpg" width = "300"/>
+
+### 2.로그인 / 회원가입 페이지
+
+<img src="https://user-images.githubusercontent.com/74149915/186645107-b4fb452e-dc5d-47bf-9460-2de2938ce65c.jpg" width = "300"/>
+
+### 3.장바구니
+
+<img src="https://user-images.githubusercontent.com/74149915/186644738-b42169a9-eb0d-491d-9dd5-c772eb2dd81a.jpg" width = "300"/>
+
+### 4.카테고리페이지
+
+<img src="https://user-images.githubusercontent.com/74149915/186645301-9fb0fefe-759f-47aa-a2fb-26dfa723bb25.jpg" width = "300"/>
+
+### 5.디테일페이지
+
+<img src="https://user-images.githubusercontent.com/74149915/186645344-93815e29-14d4-4413-b51f-6904d75e30dd.jpg" width = "300"/>
+
+### 6.문의페이지
+
+<img src="https://user-images.githubusercontent.com/74149915/186645412-13f9fcca-3e86-4b8a-a5bc-03a509664d0f.jpg" width = "300"/>
 
 ## 📚 핵심 기능
 
@@ -25,7 +76,7 @@ useEffect(() => {
 }, [page, orderby]);
 ```
 
-## ✒️ 새로 적용해본 기술
+## 🚀 새로 적용해본 기술
 
 #### 1. Media query
 
@@ -49,7 +100,7 @@ useEffect(() => {
   습니다. 생각한 장점으로는 사이트 내 스타일의 통일감을 주어 사용자가 좀 더 편안
   한 환경에서 사용이 가능할 것 같습니다.
 
-## 🔎 개선해야할 사항
+## 📖 개선해야할 사항
 
 ### 1. 인증
 
@@ -60,9 +111,9 @@ useEffect(() => {
 
 #### 1-2. cookie 사용
 
-- 처음에 Access token을 저장하는 방법으로 cookie를 사용하였으나 만료 시간 설정
-  문제로 SessionStorage를 사용했습니다. 다음에는 만료 시간 설정 및 쿠키 값이 만
-  료가 되었을 경우 로그아웃 되는 로직을 구현하겠습니다.
+- 처음에 Access token을 저장하는 방법으로 cookie를 사용하였으나 만료 시간 설정문
+  제로 SessionStorage를 사용했습니다. 다음에는 만료 시간 설정 및 쿠키 값이 만료
+  가 되었을 경우 로그아웃 되는 로직을 구현하겠습니다.
 
 ### 2. 기능
 
@@ -79,67 +130,7 @@ useEffect(() => {
   되는 사항이 있어 시간 소요되는 비용을 고려했을 때 진행하지 않기로 하였습니다.
   똑같이 다음에는 와이어프레임 & API 설계 진행할 때 좀 더 고려를 많이 하겠습니다
   .
-=======
-![GM  Logo](https://user-images.githubusercontent.com/74149915/186643525-1e093aa0-fb3b-4225-85d7-463e980b2916.jpg)
-
-## 👉🏻 프로젝트 소개 <br>
-아이웨어(eye wear) 브랜드 GENTLE MONSTER 웹 페이지를 클론 코딩하였습니다.
-<br><br>
-
-## 🗓 프로젝트 기간
-2022년 08월 19일 ~ 2022년 8월 25일 (1주)
-<br><br>
-
-## 프로젝트 참여 멤버
-성필상 <br>
-나소나 <br>
-김민석 <br>
-<br><br>
-
-## 🛠 프로젝트 아키텍쳐
-<br><br>
-
-## ⚙️ 기술 스택
-<br><br>
-
-## 📃 API 명세서
-<img src="https://user-images.githubusercontent.com/74149915/186645644-6119e10d-81f0-49ab-972e-9be18a92fc03.jpg" width = "500"/>
-
-
-<br><br>
-## 📚 와이어 프레임 
-### 1.랜딩페이지
-<img src="https://user-images.githubusercontent.com/74149915/186643603-8537b115-53ed-4c04-a69f-7fefcd2243de.jpg" width = "300"/>
-
-### 2.로그인 / 회원가입 페이지
-<img src="https://user-images.githubusercontent.com/74149915/186645107-b4fb452e-dc5d-47bf-9460-2de2938ce65c.jpg" width = "300"/>
-
-
-### 3.장바구니
-<img src="https://user-images.githubusercontent.com/74149915/186644738-b42169a9-eb0d-491d-9dd5-c772eb2dd81a.jpg" width = "300"/>
-
-### 4.카테고리페이지
-<img src="https://user-images.githubusercontent.com/74149915/186645301-9fb0fefe-759f-47aa-a2fb-26dfa723bb25.jpg" width = "300"/>
-
-### 5.디테일페이지
-<img src="https://user-images.githubusercontent.com/74149915/186645344-93815e29-14d4-4413-b51f-6904d75e30dd.jpg" width = "300"/>
-
-
-### 6.문의페이지
-<img src="https://user-images.githubusercontent.com/74149915/186645412-13f9fcca-3e86-4b8a-a5bc-03a509664d0f.jpg" width = "300"/>
-
-
-
-
-
-<br><br>
-
-## 🚀 새로 적용해본 기술
-<br><br>
-
-## 📖 개선해야할 사항
-<br><br>
 
 ## 🔥 피드백 받은 내용
+
 <br><br>
->>>>>>> ce3ae7e43a98e573cbe19a4d090372f73c610d96

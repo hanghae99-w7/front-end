@@ -114,8 +114,8 @@ const Header = () => {
   useEffect(() => {
     if (window.sessionStorage.length !== 0) {
       dispatch(headerAction({ is_login: true }));
+      dispatch(getBasketThunk());
     }
-    dispatch(getBasketThunk());
   }, []);
 
   const isSmallScreen = useMediaQuery({
@@ -263,10 +263,12 @@ const Header = () => {
             <HeaderBasketCartGroup>
               {basket_is_loaded ? (
                 baskets.map((basket) => {
+                  console.log(basket);
                   return (
                     <Basket
                       key={basket.itemId}
                       id={basket.itemId}
+                      basketId={basket.basketId}
                       imgUrl={basket.imgUrl}
                       price={basket.price}
                       name={basket.name}
