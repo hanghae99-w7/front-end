@@ -9,9 +9,9 @@
 <br><br>
 
 ## 👻 프로젝트 참여 멤버
-성필상 <br>
-나소나 <br>
-김민석 <br>
+성필상 https://github.com/lucy-pill <br>
+나소나 https://github.com/4775614 <br>
+김민석 https://github.com/cordplace <br>
 <br><br>
 
 ## 🔲 화면 구성
@@ -24,6 +24,7 @@
 <img src ="https://user-images.githubusercontent.com/107938837/186643110-1cda55c4-6cc4-4f1a-bf35-78ef6dd410c9.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643106-f9a3dd8b-d523-4612-9e68-65ad1d96efa7.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643094-62fe97a4-ab8d-4be2-8ddf-438958663374.gif" width= "300" height="180"/>|
 **소셜로그인**|**문의하기 관리자 계정**|**문의하기 **
 <img src ="https://user-images.githubusercontent.com/107938837/186643067-2cad9a50-a3aa-4285-812d-1922ae69377b.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643097-5c28b52c-fa32-4df1-a6f1-dfc43dc34c26.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643100-2066feb9-8637-4c54-89e8-e9b5a288cbc4.gif" width= "300" height="180"/>| 
+<br><br>
 
 ## 🛠 프로젝트 아키텍쳐
 ![image](https://user-images.githubusercontent.com/44804024/186624236-804b1101-477c-464b-aa6f-269cbf04eb3e.png)
