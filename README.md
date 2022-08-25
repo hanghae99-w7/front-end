@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ## ⚙️ 프로젝트 아키텍처
 
 ![image](https://user-images.githubusercontent.com/44804024/186624236-804b1101-477c-464b-aa6f-269cbf04eb3e.png)
@@ -96,17 +96,39 @@ useEffect(() => {
 김민석 <br>
 <br><br>
 
+## 🔲 화면 구성
+**랜딩페이지**|**반응형메인**|**반응형헤더**
+:--------:|:--------:|:--------:|
+<img src ="https://user-images.githubusercontent.com/107938837/186643090-03649d56-0cff-4bb9-b2e7-512d97fc9668.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643081-fe26a7c0-88a0-451f-a676-170bd0b7823c.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643072-3b6f435d-9bd4-4c8b-9e44-a6c87e71b2b7.gif" width= "300" height="180"/>|
+**반응형푸터**|**페이지구성**|**정렬방식변경**
+<img src ="https://user-images.githubusercontent.com/107938837/186643077-9d492e9c-7da6-4034-beab-7701f4c95615.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186642193-01f7cb9f-4d68-43c5-bf99-4b4e495289c2.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643114-d3fdc040-d345-4c63-9715-90ece1669289.gif" width= "300" height="180"/>|
+**무한 스크롤**|**상세페이지**|**장바구니**
+<img src ="https://user-images.githubusercontent.com/107938837/186643110-1cda55c4-6cc4-4f1a-bf35-78ef6dd410c9.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643106-f9a3dd8b-d523-4612-9e68-65ad1d96efa7.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643094-62fe97a4-ab8d-4be2-8ddf-438958663374.gif" width= "300" height="180"/>|
+**소셜로그인**|**문의하기 관리자 계정**|**문의하기 **
+<img src ="https://user-images.githubusercontent.com/107938837/186643067-2cad9a50-a3aa-4285-812d-1922ae69377b.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643097-5c28b52c-fa32-4df1-a6f1-dfc43dc34c26.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643100-2066feb9-8637-4c54-89e8-e9b5a288cbc4.gif" width= "300" height="180"/>| 
 ## 🛠 프로젝트 아키텍쳐
 <br><br>
 
 ## ⚙️ 기술 스택
+![javaScript](https://camo.githubusercontent.com/fe1c8df487dbc029d3a1819dcc5bf79e066f1307131191ac2b02de8c3c55da81/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6176615363726970742d4637444631453f7374796c653d266c6f676f3d4a617661536372697074266c6f676f436f6c6f723d7768697465)
+![React](https://camo.githubusercontent.com/34c6a7afcc16731e2c4d73f3af9b275b172b2e46dc1e82be3f121a71fe067de9/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656163742d3631444146423f7374796c653d266c6f676f3d5265616374266c6f676f436f6c6f723d7768697465)
+![Redux](https://camo.githubusercontent.com/d58ceb12a14709c7049878ae358ef7628e42d4276108b758cbb66a8922e7ef3e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656475782d3736344142433f7374796c653d266c6f676f3d5265647578266c6f676f436f6c6f723d7768697465)
+![ReactRouter](https://camo.githubusercontent.com/d257f8e18789ba1e6d34a9c63cbe150083c96b6f0da2eb059ae02422914ea80a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f526561637420526f757465722d4341343234353f7374796c653d266c6f676f3d526561637420526f75746572266c6f676f436f6c6f723d7768697465)
+![Axios](https://camo.githubusercontent.com/809053601ae7a670d58865bd88e0f313cc5ced1c0915ff43aeb2ad1d1bf252c2/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4178696f732d3638323865323f7374796c653d)
+![Swiper](https://camo.githubusercontent.com/2a4027d72d8e0d2938ad47bd8e4274fee26f286e464ce62c492a3dc2ff09b174/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5377697065722d3633333246363f7374796c653d266c6f676f3d537769706572266c6f676f436f6c6f723d7768697465)
+![styledComponents](https://camo.githubusercontent.com/8d29f15964b1cb2254deccb293a2c444eee52078b3d448b6149c17c5ab40d2ce/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7374796c65642d636f6d706f6e656e74732d4442373039333f7374796c653d266c6f676f3d7374796c65642d636f6d706f6e656e7473266c6f676f436f6c6f723d7768697465)
+![css](https://camo.githubusercontent.com/c774b3527d1dfaea9ddb6a253fc0bad0b819a570a9da14adf2eb02279ae8f5d7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4353532d3135373242363f7374796c653d266c6f676f3d43535333266c6f676f436f6c6f723d7768697465)
+#### Dev tools
+![VisualStudioCode](https://camo.githubusercontent.com/e9f45e009429d35852b90e211cac4d3881b18471d8faa43b24bdaf4c8a19723b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f56697375616c2053747564696f20436f64652d3030374143433f7374796c653d266c6f676f3d56697375616c2053747564696f20436f6465266c6f676f436f6c6f723d7768697465)
+![Git](https://camo.githubusercontent.com/a5e39b99ce3f82aa5b1d04379575311317fccec3787a98f9e8b94b4034142d3e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769742d4630353033323f7374796c653d266c6f676f3d476974266c6f676f436f6c6f723d7768697465)
+![Github](https://camo.githubusercontent.com/245d233220d2b61c6e4c7177cf60be551e2be541c43c4deb25cd935903745233/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3138313731373f7374796c653d266c6f676f3d476974487562266c6f676f436f6c6f723d7768697465)
 <br><br>
+
 
 ## 📃 API 명세서
 <img src="https://user-images.githubusercontent.com/74149915/186645644-6119e10d-81f0-49ab-972e-9be18a92fc03.jpg" width = "500"/>
-
-
 <br><br>
+
 ## 📚 와이어 프레임 
 ### 1.랜딩페이지
 <img src="https://user-images.githubusercontent.com/74149915/186643603-8537b115-53ed-4c04-a69f-7fefcd2243de.jpg" width = "300"/>
@@ -128,9 +150,30 @@ useEffect(() => {
 ### 6.문의페이지
 <img src="https://user-images.githubusercontent.com/74149915/186645412-13f9fcca-3e86-4b8a-a5bc-03a509664d0f.jpg" width = "300"/>
 
-
 <br><br>
 
+## 🤦‍♀️ 트러블 슈팅
+### 1.정렬하기 기능 구현중 
+    -문제: 정렬하기 눌렀을때 리덕스를 이용하여 빈 배열로 만든 후에 원래 있던 상품 카드들이 삭제되는 현상이 발생했다.<br>
+    -원인: 리덕스로 배열을 빈 배열로 만들고 난 이후 랜더링이 없어서 카드들이 없어진 이후의 상태로 있었던 것 그 밑에 코드를 적용하여 데이터를 불러오기 위해서는 랜더링이 필요했음.<br>
+    -해결 방법: state를 이용하여 랜더링을 시켜주어 해결
+### 2.API로 선글라스 조회 , 안경 조회하는 URL에 카테고리를 주어 구분했었는데 같은 URL에 상품을 불러오는 현상이 발생.
+    - 원인: 같은 리듀서에서 하나의 케이스에서 불러오는게 원인
+    - 해결방법: 다음의if문을 이용하여 category에 확실하게 구분을 주어 해결함
+    
+        builder.addCase(getItemThunk.fulfilled, (state, action) => {
+          if (action.payload.category === 'glasses') {
+            state.is_loaded = true;
+            state.item_glasses = [...state.item_glasses, ...action.payload.data];
+          } else {
+            state.is_loaded = true;
+            state.item_sunglasses = [
+              ...state.item_sunglasses,
+              ...action.payload.data,
+            ];
+          }
+        });
+<br><br>
 ## 🚀 새로 적용해본 기술
 <br><br>
 
@@ -138,12 +181,4 @@ useEffect(() => {
 <br><br>
 
 ## 🔥 피드백 받은 내용
-✏️1. 파일 디렉토리 설계 잘 되어있음
-✏️2. 관리자 기능 때문에 페이지에서 세션에 있는 토큰값 가져와서 그걸 비교하는 관리자 함수가 있는데 이것도 유틸이라는 폴더 만들어서 공통적으로 
-스타일 적인 부분 : 반응형을 사용 할 때 하이트 값은 고정 시켜주면 안됨. 넓이는 유동적으로 늘었다줄었다 하지만 하이트 값은 데스크탑이나 아이패드, 모바일 등등 고정되어있는 경우가 많음
-
-하이트 대신 라인 하이트로 해서 안에값을 퍼센트로 지정 하고 겉에 하이트를 지정 해주기
-
-폰트 패밀리, 글로벌 스타일로 공통적으로 빼주기
 <br><br>
->>>>>>> ce3ae7e43a98e573cbe19a4d090372f73c610d96
