@@ -27,12 +27,12 @@ export const ContentTop = styled.div`
 `;
 
 export const ContentTopTitle = styled.div`
-  font-size: 16px;
-  font-weight: 900;
-  width: 100%;
-  height: 22px;
-  font-family: 'AppleSDGothicNeoL';
-`;
+font-size: 16px;
+font-weight: 550;
+width: 100%;
+height: 22px;
+font-family: 'AppleSDGothicNeoEB';
+`
 
 export const ContentTopIconsbox = styled.span`
   display: flex;
