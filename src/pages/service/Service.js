@@ -26,9 +26,11 @@ import {
   SmallMainVideoWrap,
   SmallServiceVideoBox,
 } from './Service.styled';
+import { useNavigate } from 'react-router-dom';
 
 const Service = () => {
   const dispatch = useDispatch();
+	const navigate = useNavigate();
 
   const serviceList = useSelector((state) => state.service.serviceList);
 
@@ -44,18 +46,13 @@ const Service = () => {
   }, []);
 
   const onClickHandler = () => {
-    if (
-      window.sessionStorage.getItem('authorization') !== '' ||
-      window.sessionStorage.getItem('authorization') !== undefined ||
-      window.sessionStorage.getItem('authorization') !== null
-    ) {
-      console.log('tt');
+    if (window.sessionStorage.length !== 0) {
       dispatch(postServiceThunk({ title, content }));
       setTitle('');
       setContent('');
     } else {
-      console.log('test');
       alert('로그인 후 이용 바랍니다');
+			navigate('/signin');
     }
   };
 
