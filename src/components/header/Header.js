@@ -105,6 +105,9 @@ const Header = () => {
   const signOut = () => {
     window.sessionStorage.removeItem('authorization');
     window.sessionStorage.removeItem('refresh-token');
+    asideBasketRef.current.style.transform = 'translateX(100%)';
+    asideBackRef.current.style.visibility = 'hidden';
+    asideBackRef.current.style.opacity = '0';
     dispatch(clearBasketAction());
     dispatch(headerAction({ is_login: false }));
     alert('로그아웃 되었습니다');
@@ -117,7 +120,7 @@ const Header = () => {
       dispatch(getBasketThunk());
     }
   }, []);
-
+  
   const isSmallScreen = useMediaQuery({
     query: '(max-width: 1023px)',
   });
@@ -138,9 +141,13 @@ const Header = () => {
                   </svg>
                 </HeaderBoxSmallLogo>
                 <HeaderBoxSmallRight>
-                  <HeaderBoxSmallBasket onClick={showBasketBar}>
-                    <BiLockAlt></BiLockAlt>
-                  </HeaderBoxSmallBasket>
+                  {window.sessionStorage.length > 0 ? (
+                    <HeaderBoxSmallBasket onClick={showBasketBar}>
+                      <BiLockAlt></BiLockAlt>
+                    </HeaderBoxSmallBasket>
+                  ) : (
+                    <div></div>
+                  )}
                   <HeaderBoxSmallMenu onClick={showAsideBar}>
                     <AiOutlineMenu></AiOutlineMenu>
                   </HeaderBoxSmallMenu>
@@ -263,7 +270,6 @@ const Header = () => {
             <HeaderBasketCartGroup>
               {basket_is_loaded ? (
                 baskets.map((basket) => {
-                  console.log(basket);
                   return (
                     <Basket
                       key={basket.itemId}
@@ -271,7 +277,7 @@ const Header = () => {
                       basketId={basket.basketId}
                       imgUrl={basket.imgUrl}
                       price={basket.price}
-                      name={basket.name}
+                      name={basket.productName}
                     />
                   );
                 })

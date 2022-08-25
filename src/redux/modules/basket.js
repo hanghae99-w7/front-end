@@ -58,12 +58,15 @@ export const basketSlice = createSlice({
       });
     });
     builder.addCase(postBasketThunk.fulfilled, (state, action) => {
-        state.basket = [...state.basket, action.payload.data];
-        state.total_price += action.payload.data.price;
+      state.basket = [...state.basket, action.payload.data];
+      state.total_price += action.payload.data.price;
     });
     builder.addCase(deleteBasketThunk.fulfilled, (state, action) => {
-      state.basket = state.basket.filter((bas) => bas.baskietId !== action.payload.baskietId)
-  });
+      state.basket = state.basket.filter(
+        (bas) => Number.parseInt(bas.basketId) !== Number.parseInt(action.payload.basketId)
+      );
+      state.total_price -= action.payload.price
+    });
   },
 });
 
