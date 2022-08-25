@@ -96,18 +96,16 @@ useEffect(() => {
 김민석 <br>
 <br><br>
 
-
-# 화면 구성
-
+## 🔲 화면 구성
 **랜딩페이지**|**반응형메인**|**반응형헤더**
 :--------:|:--------:|:--------:|
-<img src ="https://user-images.githubusercontent.com/107938837/186643090-03649d56-0cff-4bb9-b2e7-512d97fc9668.gif" width= "300" height="220"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643081-fe26a7c0-88a0-451f-a676-170bd0b7823c.gif" width= "300" height="220"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643072-3b6f435d-9bd4-4c8b-9e44-a6c87e71b2b7.gif" width= "300" height="220"/>|
+<img src ="https://user-images.githubusercontent.com/107938837/186643090-03649d56-0cff-4bb9-b2e7-512d97fc9668.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643081-fe26a7c0-88a0-451f-a676-170bd0b7823c.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643072-3b6f435d-9bd4-4c8b-9e44-a6c87e71b2b7.gif" width= "300" height="180"/>|
 **반응형푸터**|**페이지구성**|**정렬방식변경**
-<img src ="https://user-images.githubusercontent.com/107938837/186643077-9d492e9c-7da6-4034-beab-7701f4c95615.gif" width= "300" height="220"/>|<img src ="https://user-images.githubusercontent.com/107938837/186642193-01f7cb9f-4d68-43c5-bf99-4b4e495289c2.gif" width= "300" height="220"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643114-d3fdc040-d345-4c63-9715-90ece1669289.gif" width= "300" height="220"/>|
+<img src ="https://user-images.githubusercontent.com/107938837/186643077-9d492e9c-7da6-4034-beab-7701f4c95615.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186642193-01f7cb9f-4d68-43c5-bf99-4b4e495289c2.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643114-d3fdc040-d345-4c63-9715-90ece1669289.gif" width= "300" height="180"/>|
 **무한 스크롤**|**상세페이지**|**장바구니**
-<img src ="https://user-images.githubusercontent.com/107938837/186643110-1cda55c4-6cc4-4f1a-bf35-78ef6dd410c9.gif" width= "300" height="220"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643106-f9a3dd8b-d523-4612-9e68-65ad1d96efa7.gif" width= "300" height="220"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643094-62fe97a4-ab8d-4be2-8ddf-438958663374.gif" width= "300" height="220"/>|
+<img src ="https://user-images.githubusercontent.com/107938837/186643110-1cda55c4-6cc4-4f1a-bf35-78ef6dd410c9.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643106-f9a3dd8b-d523-4612-9e68-65ad1d96efa7.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643094-62fe97a4-ab8d-4be2-8ddf-438958663374.gif" width= "300" height="180"/>|
 **소셜로그인**|**문의하기 관리자 계정**|**문의하기 **
-<img src ="https://user-images.githubusercontent.com/107938837/186643067-2cad9a50-a3aa-4285-812d-1922ae69377b.gif" width= "300" height="220"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643097-5c28b52c-fa32-4df1-a6f1-dfc43dc34c26.gif" width= "300" height="220"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643100-2066feb9-8637-4c54-89e8-e9b5a288cbc4.gif" width= "300" height="220"/>| 
+<img src ="https://user-images.githubusercontent.com/107938837/186643067-2cad9a50-a3aa-4285-812d-1922ae69377b.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643097-5c28b52c-fa32-4df1-a6f1-dfc43dc34c26.gif" width= "300" height="180"/>|<img src ="https://user-images.githubusercontent.com/107938837/186643100-2066feb9-8637-4c54-89e8-e9b5a288cbc4.gif" width= "300" height="180"/>| 
 ## 🛠 프로젝트 아키텍쳐
 <br><br>
 
@@ -126,11 +124,11 @@ useEffect(() => {
 ![Github](https://camo.githubusercontent.com/245d233220d2b61c6e4c7177cf60be551e2be541c43c4deb25cd935903745233/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3138313731373f7374796c653d266c6f676f3d476974487562266c6f676f436f6c6f723d7768697465)
 <br><br>
 
+
 ## 📃 API 명세서
 <img src="https://user-images.githubusercontent.com/74149915/186645644-6119e10d-81f0-49ab-972e-9be18a92fc03.jpg" width = "500"/>
-
-
 <br><br>
+
 ## 📚 와이어 프레임 
 ### 1.랜딩페이지
 <img src="https://user-images.githubusercontent.com/74149915/186643603-8537b115-53ed-4c04-a69f-7fefcd2243de.jpg" width = "300"/>
@@ -152,9 +150,30 @@ useEffect(() => {
 ### 6.문의페이지
 <img src="https://user-images.githubusercontent.com/74149915/186645412-13f9fcca-3e86-4b8a-a5bc-03a509664d0f.jpg" width = "300"/>
 
-
 <br><br>
 
+## 🤦‍♀️ 트러블 슈팅
+### 1.정렬하기 기능 구현중 
+    -문제: 정렬하기 눌렀을때 리덕스를 이용하여 빈 배열로 만든 후에 원래 있던 상품 카드들이 삭제되는 현상이 발생했다.<br>
+    -원인: 리덕스로 배열을 빈 배열로 만들고 난 이후 랜더링이 없어서 카드들이 없어진 이후의 상태로 있었던 것 그 밑에 코드를 적용하여 데이터를 불러오기 위해서는 랜더링이 필요했음.<br>
+    -해결 방법: state를 이용하여 랜더링을 시켜주어 해결
+### 2.API로 선글라스 조회 , 안경 조회하는 URL에 카테고리를 주어 구분했었는데 같은 URL에 상품을 불러오는 현상이 발생.
+    - 원인: 같은 리듀서에서 하나의 케이스에서 불러오는게 원인
+    - 해결방법: 다음의if문을 이용하여 category에 확실하게 구분을 주어 해결함
+    
+        builder.addCase(getItemThunk.fulfilled, (state, action) => {
+          if (action.payload.category === 'glasses') {
+            state.is_loaded = true;
+            state.item_glasses = [...state.item_glasses, ...action.payload.data];
+          } else {
+            state.is_loaded = true;
+            state.item_sunglasses = [
+              ...state.item_sunglasses,
+              ...action.payload.data,
+            ];
+          }
+        });
+<br><br>
 ## 🚀 새로 적용해본 기술
 <br><br>
 
