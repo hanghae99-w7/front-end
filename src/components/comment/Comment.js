@@ -21,6 +21,8 @@ import {
 } from './Comment.styled';
 import { useNavigate } from 'react-router-dom';
 
+
+
 const Comment = ({
   id,
   username,

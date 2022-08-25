@@ -3,7 +3,8 @@ import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import { SunglassCategori2 } from '../../components/categoriBox/Categori';
 import { getItemThunk, clearSunglassItem } from '../../redux/modules/item';
-import { BsFilter, BsFillGrid3X3GapFill } from 'react-icons/bs';
+import { BiSlider} from 'react-icons/bi';
+import {IoMdApps} from 'react-icons/io';
 import { useSelector, useDispatch } from 'react-redux';
 import { throttle } from 'lodash';
 import { useCallback, useState } from 'react';
@@ -17,6 +18,8 @@ import {
   ContentTopIconsbox2,
   FilterBoxSunglass,
   FilterList,
+  IconOne,
+  IconTwo
 } from './Sunglass.styled';
 import { Fragment, useEffect } from 'react';
 
@@ -102,11 +105,11 @@ const Glass = () => {
       <ContentTop>
         <ContentTopTitle>선글라스 / 전체보기</ContentTopTitle>
         <ContentTopIconsbox onClick={viewChange}>
-          <BsFillGrid3X3GapFill style={{ fontSize: '17px' }} /> 간략보기
+          <IconOne><IoMdApps style={{ fontSize: '18px' }} /></IconOne> 간략보기
         </ContentTopIconsbox>
         &nbsp;
         <ContentTopIconsbox2 onClick={filterOnOff}>
-          <BsFilter style={{ fontSize: '18px' }} /> 필터
+        <IconTwo><BiSlider style={{ fontSize: '17px' }} /></IconTwo> 필터
         </ContentTopIconsbox2>
       </ContentTop>
       {filter === true ? (
