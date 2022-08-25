@@ -17,6 +17,8 @@ import {
   ContentTopIconsbox2,
   FilterBoxSunglass,
   FilterList,
+  IconOne,
+  IconTwo
 } from './Sunglass.styled';
 import { Fragment, useEffect } from 'react';
 
@@ -102,11 +104,11 @@ const Glass = () => {
       <ContentTop>
         <ContentTopTitle>선글라스 / 전체보기</ContentTopTitle>
         <ContentTopIconsbox onClick={viewChange}>
-          <IoMdApps style={{ fontSize: '17px' }} /> 간략보기
+          <IconOne><IoMdApps style={{ fontSize: '18px' }} /></IconOne> 간략보기
         </ContentTopIconsbox>
         &nbsp;
         <ContentTopIconsbox2 onClick={filterOnOff}>
-          <BiSlider style={{ fontSize: '17px' }} /> 필터
+        <IconTwo><BiSlider style={{ fontSize: '17px' }} /></IconTwo> 필터
         </ContentTopIconsbox2>
       </ContentTop>
       {filter === true ? (

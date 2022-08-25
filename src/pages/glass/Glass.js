@@ -17,6 +17,8 @@ import {
   ContentTopIconsbox2,
   FilterBox,
   FilterList,
+  IconOne,
+  IconTwo
 } from './Glass.styled';
 import { Fragment, useEffect } from 'react';
 
@@ -102,12 +104,12 @@ const Glass = () => {
       <ContentTop>
         <ContentTopTitle>안경 / 전체보기</ContentTopTitle>
         <ContentTopIconsbox onClick={viewChange}>
-          <IoMdApps style={{ fontSize: '17px' }} />
+          <IconOne><IoMdApps style={{ fontSize: '18px' }} /></IconOne>
           간략보기
         </ContentTopIconsbox>
         &nbsp;
         <ContentTopIconsbox2 onClick={filterOnOff}>
-          <BiSlider style={{ fontSize: '17px' }} /> 필터
+          <IconTwo><BiSlider style={{ fontSize: '17px' }} /></IconTwo> 필터
         </ContentTopIconsbox2>
       </ContentTop>
       {filter === true ? (
