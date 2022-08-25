@@ -26,3 +26,14 @@ export const BasketBoxPrice = styled.span`
   left: 100px;
   font-family: AppleSDGothicNeoM;
 `;
+export const BasketBoxDelete = styled.span`
+  position: absolute;
+  font-family: AppleSDGothicNeoM;
+  font-size: 13px;
+  right: 0;
+  bottom: 0;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+  }
+`;

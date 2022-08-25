@@ -3,7 +3,7 @@ import { Fragment, memo } from 'react';
 import { useDispatch } from 'react-redux';
 
 // Redux
-import { postbasketThunk, addSelectBasket } from '../../redux/modules/basket';
+import { postBasketThunk, addSelectBasket } from '../../redux/modules/basket';
 
 // Packages
 import { useNavigate } from 'react-router-dom';
@@ -25,13 +25,17 @@ const Card = ({ id, price, name, imgUrl, cardView }) => {
   const dispatch = useDispatch();
 
   const addBasket = () => {
-    console.log('test');
-    dispatch(postbasketThunk(id)).then((res) => {
-      if (res.payload) {
-        dispatch(addSelectBasket({ id, price, name, imgUrl }));
-        alert('장바구니에 추가되었습니다');
-      }
-    });
+    if(window.sessionStorage.length !== 0){
+      dispatch(postBasketThunk(id)).then((res) => {
+        if (res.payload.success) {
+          alert('장바구니에 추가되었습니다');
+        }
+      });
+    } else {
+      alert('로그인 후 사용 가능합니다');
+      navigate('/signin');
+    }
+    
   };
 
   return (
@@ -40,9 +44,9 @@ const Card = ({ id, price, name, imgUrl, cardView }) => {
         <CardBox id={id}>
           <CardImg src={imgUrl} onClick={() => navigate(`/detail/${id}`)} />
           <CardTextBox>
-            <CardItemName>{name}</CardItemName>
+            <CardItemName onClick={() => navigate(`/detail/${id}`)}>{name}</CardItemName>
             <br />
-            <CardItemPrice>{price}</CardItemPrice>
+            <CardItemPrice onClick={() => navigate(`/detail/${id}`)}>{price}</CardItemPrice>
             <CartItemIconBox onClick={addBasket}>
               <svg
                 strokeWidth="0"

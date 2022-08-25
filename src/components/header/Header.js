@@ -1,10 +1,10 @@
 // React
-import { useState, useEffect, Fragment, useRef } from 'react';
+import { useEffect, Fragment, useRef } from 'react';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
 import { headerAction } from '../../redux/modules/user';
-import { clearBasketAction } from '../../redux/modules/basket';
+import { clearBasketAction, getBasketThunk } from '../../redux/modules/basket';
 
 // Packages
 import { useNavigate } from 'react-router-dom';
@@ -12,7 +12,6 @@ import { useMediaQuery } from 'react-responsive';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { BiLockAlt } from 'react-icons/bi';
 import { BsXLg } from 'react-icons/bs';
-import jwt_decode from 'jwt-decode';
 
 // Components & Elements
 import Button from '../../elements/button/Button';
@@ -74,6 +73,7 @@ const Header = () => {
   const is_login = useSelector((state) => state.user.is_login);
   const baskets = useSelector((state) => state.basket.basket);
   const basket_is_loaded = useSelector((state) => state.basket.is_loaded);
+  const total_price = useSelector((state) => state.basket.total_price);
 
   const asideBarRef = useRef();
   const asideBackRef = useRef();
@@ -112,21 +112,10 @@ const Header = () => {
   };
 
   useEffect(() => {
-    try {
-      if (
-        window.sessionStorage.getItem('authorization') !== '' ||
-        window.sessionStorage.getItem('authorization') !== undefined ||
-        window.sessionStorage.getItem('authorization') !== null
-      ) {
-        const nickname = jwt_decode(
-          window.sessionStorage.getItem('authorization')
-        ).sub;
-        console.log(nickname);
-        dispatch(headerAction({ is_login: true }));
-      }
-    } catch (err) {
-      console.error(err);
+    if (window.sessionStorage.length !== 0) {
+      dispatch(headerAction({ is_login: true }));
     }
+    dispatch(getBasketThunk());
   }, []);
 
   const isSmallScreen = useMediaQuery({
@@ -276,8 +265,8 @@ const Header = () => {
                 baskets.map((basket) => {
                   return (
                     <Basket
-                      key={basket.id}
-                      id={basket.id}
+                      key={basket.itemId}
+                      id={basket.itemId}
                       imgUrl={basket.imgUrl}
                       price={basket.price}
                       name={basket.name}
@@ -299,7 +288,9 @@ const Header = () => {
             <HeaderBasketTotalTotal>
               <HeaderBasketTotalObj>
                 <HeaderBasketTotalSpan>합계</HeaderBasketTotalSpan>
-                <HeaderBasketTotalSpan>0원</HeaderBasketTotalSpan>
+                <HeaderBasketTotalSpan>
+                  {basket_is_loaded ? total_price : '0'}원
+                </HeaderBasketTotalSpan>
               </HeaderBasketTotalObj>
             </HeaderBasketTotalTotal>
           </HeaderBasketTotalGroup>

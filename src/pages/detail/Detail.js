@@ -4,10 +4,10 @@ import { useState, useRef, Fragment, useEffect } from 'react';
 // Redux
 import { useSelector, useDispatch } from 'react-redux';
 import { getSingleItemThunk } from '../../redux/modules/item';
-import { postbasketThunk, addSelectBasket } from '../../redux/modules/basket';
+import { postBasketThunk, addSelectBasket } from '../../redux/modules/basket';
 
 // Packages
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
 // Components & Elements
@@ -56,6 +56,7 @@ const Detail = () => {
 
   const { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const detail_is_loaded = useSelector((state) => state.item.detail_is_loaded);
   const item_single = useSelector((state) => state.item.item_single);
@@ -124,13 +125,18 @@ const Detail = () => {
   };
 
   const addBasket = () => {
-    console.log('test');
-    dispatch(postbasketThunk(id)).then((res) => {
-      if (res.payload) {
-        dispatch(addSelectBasket({ id: item_single.id, price: item_single.price, name: item_single.productName, imgUrl: item_single.imgUrl }));
-        alert('장바구니에 추가되었습니다');
-      }
-    });
+    if(window.sessionStorage.length !== 0) {
+      dispatch(postBasketThunk(id)).then((res) => {
+        if (res.payload) {
+          dispatch(addSelectBasket({ id: item_single.id, price: item_single.price, name: item_single.productName, imgUrl: item_single.imgUrl }));
+          alert('장바구니에 추가되었습니다');
+        }
+      });
+    }
+    else {
+      alert('로그인 후 사용 가능합니다');
+      navigate('/signin');
+    }
   };
 
   useEffect(() => {

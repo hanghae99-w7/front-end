@@ -5,7 +5,8 @@ import { SunglassCategori2 } from '../../components/categoriBox/Categori';
 import { getItemThunk, clearSunglassItem } from '../../redux/modules/item';
 import { BsFilter, BsFillGrid3X3GapFill } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { throttle } from 'lodash';
+import { useCallback, useState } from 'react';
 import CardSkeleton from '../../components/skeleton/CardSkeleton';
 import {
   GlassFull,
@@ -45,7 +46,6 @@ const Glass = () => {
   }, []);
 
   useEffect(() => {
-    console.log('change page');
     dispatch(getItemThunk({ page, orderby: orderby, category: 'sunglasses' }));
   }, [page, orderby]);
 
