@@ -9,7 +9,6 @@ export const getBasketThunk = createAsyncThunk(
     const resData = await api_auth
       .get(`/api/item/basket`)
       .then((res) => res.data);
-    console.log(resData);
     return thunkAPI.fulfillWithValue(resData.data);
   }
 );
@@ -17,7 +16,6 @@ export const getBasketThunk = createAsyncThunk(
 export const postBasketThunk = createAsyncThunk(
   'basket/postBasket',
   async (payload, thunkAPI) => {
-    console.log(payload);
     const resData = await api_auth
       .post(`/api/item/basket/${payload}`)
       .then((res) => res.data);
@@ -28,11 +26,9 @@ export const postBasketThunk = createAsyncThunk(
 export const deleteBasketThunk = createAsyncThunk(
   'basket/deleteBasket',
   async (payload, thunkAPI) => {
-    console.log(payload);
     const resData = await api_auth
       .delete(`/api/item/basket/${payload}`)
       .then((res) => res.data);
-    console.log(resData);
     return thunkAPI.fulfillWithValue(resData.data);
   }
 );
@@ -62,12 +58,15 @@ export const basketSlice = createSlice({
       });
     });
     builder.addCase(postBasketThunk.fulfilled, (state, action) => {
-        state.basket = [...state.basket, action.payload.data];
-        state.total_price += action.payload.data.price;
+      state.basket = [...state.basket, action.payload.data];
+      state.total_price += action.payload.data.price;
     });
     builder.addCase(deleteBasketThunk.fulfilled, (state, action) => {
-      state.basket = state.basket.filter(bas => bas.id !== action.payload.data.itemId)
-  });
+      state.basket = state.basket.filter(
+        (bas) => Number.parseInt(bas.basketId) !== Number.parseInt(action.payload.basketId)
+      );
+      state.total_price -= action.payload.price
+    });
   },
 });
 

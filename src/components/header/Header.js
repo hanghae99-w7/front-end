@@ -105,6 +105,9 @@ const Header = () => {
   const signOut = () => {
     window.sessionStorage.removeItem('authorization');
     window.sessionStorage.removeItem('refresh-token');
+    asideBasketRef.current.style.transform = 'translateX(100%)';
+    asideBackRef.current.style.visibility = 'hidden';
+    asideBackRef.current.style.opacity = '0';
     dispatch(clearBasketAction());
     dispatch(headerAction({ is_login: false }));
     alert('로그아웃 되었습니다');
@@ -114,10 +117,10 @@ const Header = () => {
   useEffect(() => {
     if (window.sessionStorage.length !== 0) {
       dispatch(headerAction({ is_login: true }));
+      dispatch(getBasketThunk());
     }
-    dispatch(getBasketThunk());
   }, []);
-
+  
   const isSmallScreen = useMediaQuery({
     query: '(max-width: 1023px)',
   });
@@ -138,9 +141,13 @@ const Header = () => {
                   </svg>
                 </HeaderBoxSmallLogo>
                 <HeaderBoxSmallRight>
-                  <HeaderBoxSmallBasket onClick={showBasketBar}>
-                    <BiLockAlt></BiLockAlt>
-                  </HeaderBoxSmallBasket>
+                  {window.sessionStorage.length > 0 ? (
+                    <HeaderBoxSmallBasket onClick={showBasketBar}>
+                      <BiLockAlt></BiLockAlt>
+                    </HeaderBoxSmallBasket>
+                  ) : (
+                    <div></div>
+                  )}
                   <HeaderBoxSmallMenu onClick={showAsideBar}>
                     <AiOutlineMenu></AiOutlineMenu>
                   </HeaderBoxSmallMenu>
@@ -267,9 +274,10 @@ const Header = () => {
                     <Basket
                       key={basket.itemId}
                       id={basket.itemId}
+                      basketId={basket.basketId}
                       imgUrl={basket.imgUrl}
                       price={basket.price}
-                      name={basket.name}
+                      name={basket.productName}
                     />
                   );
                 })
