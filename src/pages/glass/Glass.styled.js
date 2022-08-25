@@ -27,33 +27,36 @@ export const ContentTop = styled.div`
 `;
 
 export const ContentTopTitle = styled.div`
-font-size: 16px;
-font-weight: 550;
-width: 100%;
-height: 22px;
-font-family: 'AppleSDGothicNeoEB';
-`
+  font-size: 16px;
+  font-weight: 700;
+  width: 100%;
+  height: 22px;
+  font-family: 'AppleSDGothicNeoM';
+`;
 
-export const ContentTopIconsbox = styled.span`
+export const ContentTopIconsbox = styled.div`
   display: flex;
+  position: relative;
   width: 80px;
   min-width: 80px;
   height: 22px;
   justify-content: end;
-  font-weight: 550;
+  font-family: 'AppleSDGothicNeoL';
+
   font-size: 13px;
   &:hover {
     cursor: pointer;
   }
 `;
 
-export const ContentTopIconsbox2 = styled.span`
+export const ContentTopIconsbox2 = styled.div`
   display: flex;
+  position: relative;
   width: 50px;
   min-width: 50px;
   height: 22px;
   justify-content: end;
-  font-weight: 550;
+  font-family: 'AppleSDGothicNeoL';
   font-size: 13px;
   margin-right: 10px;
   &:hover {
@@ -81,4 +84,16 @@ export const FilterList = styled.div`
   &:hover {
     cursor: pointer;
   }
+`;
+
+export const IconOne = styled.div`
+  position: absolute;
+  top: -3px;
+  right: 48px;
+`;
+
+export const IconTwo = styled.div`
+  position: absolute;
+  top: -2.5px;
+  right: 28px;
 `;
