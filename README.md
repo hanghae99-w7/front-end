@@ -1,14 +1,14 @@
 ![GM  Logo](https://user-images.githubusercontent.com/74149915/186643525-1e093aa0-fb3b-4225-85d7-463e980b2916.jpg)
 
 ## 👉🏻 프로젝트 소개 <br>
-아이웨어(eye wear) 브랜드 GENTLE MONSTER 웹 페이지를 클론 코딩하였습니다.
+아이웨어(eye wear) 브랜드 'GENTLE MONSTER' 웹 페이지를 클론 코딩하였습니다.
 <br><br>
 
 ## 🗓 프로젝트 기간
 2022년 08월 19일 ~ 2022년 8월 25일 (1주)
 <br><br>
 
-## 프로젝트 참여 멤버
+## 👻 프로젝트 참여 멤버
 성필상 <br>
 나소나 <br>
 김민석 <br>
@@ -45,9 +45,6 @@
 
 ### 6.문의페이지
 <img src="https://user-images.githubusercontent.com/74149915/186645412-13f9fcca-3e86-4b8a-a5bc-03a509664d0f.jpg" width = "300"/>
-
-
-
 
 
 <br><br>
